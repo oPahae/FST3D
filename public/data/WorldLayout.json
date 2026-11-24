@@ -1,0 +1,4892 @@
+{
+ "meta": {
+  "name": "FST Settat WorldLayout",
+  "version": "0.7e",
+  "status": "provisional",
+  "supersedes": "0.3 (preserved as WorldLayout.v0.3.json); 0.2 and 0.1 also preserved",
+  "warning": "Normalized, approximate, read by eye from the satellite image. Heights, floors and facades are UNKNOWN and deliberately not stored.",
+  "changes": [
+   "Removed the Bibliothèque (LIBRARY).",
+   "Added the Buvette (BUVETTE) across the west road at the former library's latitude (replaces the satellite-only building W_ACR2).",
+   "White halls HALL_W / HALL_E are carports (rows of white umbrella shades); W_STRIP is a greenhouse.",
+   "Courts: Administration, Building 4 and the connector patios get a checkerboard floor; IT Learning gets its inner court; the fountain was replaced by a curved pergola.",
+   "Added features: curved pergola, mini football pitch, garden step terrace, speed bump.",
+   "Passages carry a style (colonnade) and a portal type (arch3 / brick) read from the field photos.",
+   "v0.5: corrections from the 25 jeu/réalité photo pairs (2026-11-20): terraces (terrain), grey slab paths, diagonal-checker plazas, trident fences, Buvette rebuilt, wild lawns, no steps on the east connector path."
+  ]
+ },
+ "coordinateSystem": {
+  "units": "NU",
+  "unitDefinition": "1 NU = outer width of the main complex (~330 px of the satellite reference)",
+  "axes": {
+   "x": "east",
+   "z": "south",
+   "y": "up"
+  },
+  "origin": "satellite px (360,340): centre of central garden",
+  "originPx": [
+   360.0,
+   340.0
+  ],
+  "pxPerNU": 330.0,
+  "metricScale": "unknown",
+  "satelliteExtentNU": {
+   "minX": -1.0909,
+   "maxX": 1.3,
+   "minZ": -1.0303,
+   "maxZ": 1.4909
+  }
+ },
+ "referenceImages": {
+  "satellite": {
+   "file": "reference/satellite.png",
+   "sizePx": [
+    789,
+    832
+   ],
+   "northUp": true
+  }
+ },
+ "buildings": [
+  {
+   "id": "BLK_C",
+   "name": "Block C",
+   "label": "Block C",
+   "identityStatus": "named_in_model",
+   "provisional": false,
+   "identityConfidence": "medium",
+   "footprintConfidence": "medium",
+   "footprints": [
+    {
+     "outer": [
+      [
+       -0.4788,
+       -0.5152
+      ],
+      [
+       -0.3939,
+       -0.5152
+      ],
+      [
+       -0.3939,
+       -0.1758
+      ],
+      [
+       -0.4788,
+       -0.1758
+      ]
+     ],
+     "holes": []
+    }
+   ],
+   "roof": "flat",
+   "height": null,
+   "heightStatus": "unknown",
+   "floors": null,
+   "modelReference": "Label 'C' on the north half of the west wing.",
+   "satelliteEvidence": "Narrow flat-roof strip, west of the garden.",
+   "notes": "",
+   "changedInV02": "Tightened to wing width (28 px)."
+  },
+  {
+   "id": "WING_W_MID",
+   "name": "West wing connector (unlabelled)",
+   "label": "connector (?)",
+   "identityStatus": "unidentified",
+   "provisional": true,
+   "identityConfidence": "low",
+   "footprintConfidence": "medium",
+   "footprints": [
+    {
+     "outer": [
+      [
+       -0.5576,
+       -0.1758
+      ],
+      [
+       -0.3939,
+       -0.1758
+      ],
+      [
+       -0.3939,
+       0.2121
+      ],
+      [
+       -0.5576,
+       0.2121
+      ]
+     ],
+     "holes": [
+      [
+       [
+        -0.497,
+        -0.019700000000000002
+       ],
+       [
+        -0.4364,
+        -0.019700000000000002
+       ],
+       [
+        -0.4364,
+        0.0501
+       ],
+       [
+        -0.497,
+        0.0501
+       ]
+      ]
+     ]
+    }
+   ],
+   "roof": "flat",
+   "height": null,
+   "heightStatus": "unknown",
+   "floors": null,
+   "modelReference": "Wider volume between C and D.",
+   "satelliteEvidence": "Stepped wider block with teal accent at its south end.",
+   "notes": "Identity not given by annotations.",
+   "changedInV02": "Now a stepped polygon instead of a rectangle."
+  },
+  {
+   "id": "BLK_D",
+   "name": "Block D",
+   "label": "Block D",
+   "identityStatus": "named_in_model",
+   "provisional": false,
+   "identityConfidence": "medium",
+   "footprintConfidence": "medium",
+   "footprints": [
+    {
+     "outer": [
+      [
+       -0.4939,
+       0.2121
+      ],
+      [
+       -0.3939,
+       0.2121
+      ],
+      [
+       -0.3939,
+       0.4939
+      ],
+      [
+       -0.3788,
+       0.4939
+      ],
+      [
+       -0.3788,
+       0.6152
+      ],
+      [
+       -0.5061,
+       0.6152
+      ],
+      [
+       -0.5061,
+       0.4939
+      ],
+      [
+       -0.4939,
+       0.4939
+      ]
+     ],
+     "holes": []
+    }
+   ],
+   "roof": "flat",
+   "height": null,
+   "heightStatus": "unknown",
+   "floors": null,
+   "modelReference": "Label 'D' on the south half of the west wing.",
+   "satelliteEvidence": "Narrow strip ending in a block that joins the south front.",
+   "notes": "",
+   "changedInV02": "Added south end block."
+  },
+  {
+   "id": "BLK_B",
+   "name": "Block B",
+   "label": "Block B",
+   "identityStatus": "named_in_model",
+   "provisional": false,
+   "identityConfidence": "medium",
+   "footprintConfidence": "medium",
+   "footprints": [
+    {
+     "outer": [
+      [
+       0.3879,
+       -0.5152
+      ],
+      [
+       0.4939,
+       -0.5152
+      ],
+      [
+       0.4939,
+       -0.1758
+      ],
+      [
+       0.3879,
+       -0.1758
+      ]
+     ],
+     "holes": []
+    }
+   ],
+   "roof": "flat",
+   "height": null,
+   "heightStatus": "unknown",
+   "floors": null,
+   "modelReference": "Label 'B' on the north half of the east wing.",
+   "satelliteEvidence": "Narrow flat-roof strip, east of the garden.",
+   "notes": "",
+   "changedInV02": "Tightened to wing width (30 px)."
+  },
+  {
+   "id": "WING_E_MID",
+   "name": "East wing connector (unlabelled)",
+   "label": "connector (?)",
+   "identityStatus": "unidentified",
+   "provisional": true,
+   "identityConfidence": "low",
+   "footprintConfidence": "medium",
+   "footprints": [
+    {
+     "outer": [
+      [
+       0.3879,
+       -0.1758
+      ],
+      [
+       0.5485,
+       -0.1758
+      ],
+      [
+       0.5485,
+       0.203
+      ],
+      [
+       0.3879,
+       0.203
+      ]
+     ],
+     "holes": [
+      [
+       [
+        0.4242,
+        -0.019700000000000002
+       ],
+       [
+        0.503,
+        -0.019700000000000002
+       ],
+       [
+        0.503,
+        0.0501
+       ],
+       [
+        0.4242,
+        0.0501
+       ]
+      ]
+     ]
+    }
+   ],
+   "roof": "flat",
+   "height": null,
+   "heightStatus": "unknown",
+   "floors": null,
+   "modelReference": "Wider volume between B and A.",
+   "satelliteEvidence": "Stepped wider block east of the garden.",
+   "notes": "Identity not given by annotations.",
+   "changedInV02": "Now a stepped polygon."
+  },
+  {
+   "id": "BLK_A",
+   "name": "Block A",
+   "label": "Block A",
+   "identityStatus": "named_in_model",
+   "provisional": false,
+   "identityConfidence": "medium",
+   "footprintConfidence": "medium",
+   "footprints": [
+    {
+     "outer": [
+      [
+       0.3879,
+       0.203
+      ],
+      [
+       0.4879,
+       0.203
+      ],
+      [
+       0.4879,
+       0.5
+      ],
+      [
+       0.3879,
+       0.5
+      ]
+     ],
+     "holes": []
+    }
+   ],
+   "roof": "flat",
+   "height": null,
+   "heightStatus": "unknown",
+   "floors": null,
+   "modelReference": "Label 'Block A' on the south half of the east wing.",
+   "satelliteEvidence": "Narrow strip south of the connector.",
+   "notes": "Label may instead refer to the SE courtyard complex (SE_COMPLEX).",
+   "changedInV02": "Tightened; extended to meet the south front."
+  },
+  {
+   "id": "ADMIN_W1",
+   "name": "Administration - west bar 1",
+   "label": "",
+   "identityStatus": "named_in_model",
+   "provisional": false,
+   "identityConfidence": "medium",
+   "footprintConfidence": "medium",
+   "footprints": [
+    {
+     "outer": [
+      [
+       -0.3788,
+       0.4879
+      ],
+      [
+       -0.103,
+       0.4879
+      ],
+      [
+       -0.103,
+       0.5939
+      ],
+      [
+       -0.3788,
+       0.5939
+      ]
+     ],
+     "holes": []
+    }
+   ],
+   "roof": "flat",
+   "height": null,
+   "heightStatus": "unknown",
+   "floors": null,
+   "modelReference": "Part of the south front labelled 'Administration'.",
+   "satelliteEvidence": "Flat roof bar, north-west of the pavilion.",
+   "notes": "",
+   "changedInV02": "Split into five measured parts."
+  },
+  {
+   "id": "ADMIN_W2",
+   "name": "Administration - west bar 2",
+   "label": "",
+   "identityStatus": "named_in_model",
+   "provisional": false,
+   "identityConfidence": "medium",
+   "footprintConfidence": "medium",
+   "footprints": [
+    {
+     "outer": [
+      [
+       -0.3667,
+       0.6727
+      ],
+      [
+       -0.1091,
+       0.6727
+      ],
+      [
+       -0.1091,
+       0.7515
+      ],
+      [
+       -0.3667,
+       0.7515
+      ]
+     ],
+     "holes": []
+    }
+   ],
+   "roof": "flat",
+   "height": null,
+   "heightStatus": "unknown",
+   "floors": null,
+   "modelReference": "Part of the south front.",
+   "satelliteEvidence": "Flat roof bar, south-west of the pavilion.",
+   "notes": "",
+   "changedInV02": ""
+  },
+  {
+   "id": "ADMIN_C",
+   "name": "Administration - central pavilion",
+   "label": "Administration",
+   "identityStatus": "named_in_model",
+   "provisional": false,
+   "identityConfidence": "medium",
+   "footprintConfidence": "medium",
+   "footprints": [
+    {
+     "outer": [
+      [
+       -0.103,
+       0.4879
+      ],
+      [
+       0.0758,
+       0.4879
+      ],
+      [
+       0.0758,
+       0.7424
+      ],
+      [
+       -0.103,
+       0.7424
+      ]
+     ],
+     "holes": [
+      [
+       [
+        -0.0354,
+        0.5667
+       ],
+       [
+        0.0596,
+        0.5667
+       ],
+       [
+        0.0596,
+        0.6636
+       ],
+       [
+        -0.0354,
+        0.6636
+       ]
+      ]
+     ]
+    }
+   ],
+   "roof": "flat",
+   "height": null,
+   "heightStatus": "unknown",
+   "floors": null,
+   "modelReference": "Entrance pavilion on the axis, turquoise details.",
+   "satelliteEvidence": "Teal-roofed pavilion with side arcades.",
+   "notes": "",
+   "changedInV02": ""
+  },
+  {
+   "id": "ADMIN_E1",
+   "name": "Administration - east bar 1",
+   "label": "",
+   "identityStatus": "named_in_model",
+   "provisional": false,
+   "identityConfidence": "medium",
+   "footprintConfidence": "medium",
+   "footprints": [
+    {
+     "outer": [
+      [
+       0.0758,
+       0.4879
+      ],
+      [
+       0.3879,
+       0.4879
+      ],
+      [
+       0.3879,
+       0.597
+      ],
+      [
+       0.0758,
+       0.597
+      ]
+     ],
+     "holes": []
+    }
+   ],
+   "roof": "flat",
+   "height": null,
+   "heightStatus": "unknown",
+   "floors": null,
+   "modelReference": "Part of the south front.",
+   "satelliteEvidence": "Flat roof bar, north-east of the pavilion.",
+   "notes": "",
+   "changedInV02": ""
+  },
+  {
+   "id": "ADMIN_E2",
+   "name": "Administration - east bar 2",
+   "label": "",
+   "identityStatus": "named_in_model",
+   "provisional": false,
+   "identityConfidence": "medium",
+   "footprintConfidence": "medium",
+   "footprints": [
+    {
+     "outer": [
+      [
+       0.0818,
+       0.6788
+      ],
+      [
+       0.3242,
+       0.6788
+      ],
+      [
+       0.3242,
+       0.7515
+      ],
+      [
+       0.0818,
+       0.7515
+      ]
+     ],
+     "holes": []
+    }
+   ],
+   "roof": "flat",
+   "height": null,
+   "heightStatus": "unknown",
+   "floors": null,
+   "modelReference": "Part of the south front.",
+   "satelliteEvidence": "Flat roof bar, south-east of the pavilion.",
+   "notes": "",
+   "changedInV02": ""
+  },
+  {
+   "id": "N_NW",
+   "name": "North wing, west block (unlabelled)",
+   "label": "",
+   "identityStatus": "unidentified",
+   "provisional": true,
+   "identityConfidence": "low",
+   "footprintConfidence": "medium",
+   "footprints": [
+    {
+     "outer": [
+      [
+       -0.3939,
+       -0.5303
+      ],
+      [
+       -0.1758,
+       -0.5303
+      ],
+      [
+       -0.1758,
+       -0.4303
+      ],
+      [
+       -0.3939,
+       -0.4303
+      ]
+     ],
+     "holes": []
+    }
+   ],
+   "roof": "flat",
+   "height": null,
+   "heightStatus": "unknown",
+   "floors": null,
+   "modelReference": "Long front block facing the garden.",
+   "satelliteEvidence": "Grey flat roof with a teal pyramid at its east end.",
+   "notes": "",
+   "changedInV02": "v0.3: "
+  },
+  {
+   "id": "N5",
+   "name": "Building 5",
+   "label": "Bldg 5",
+   "identityStatus": "provisional",
+   "provisional": true,
+   "identityConfidence": "low",
+   "footprintConfidence": "medium",
+   "footprints": [
+    {
+     "outer": [
+      [
+       -0.1758,
+       -0.5758
+      ],
+      [
+       -0.0455,
+       -0.5758
+      ],
+      [
+       -0.0455,
+       -0.4303
+      ],
+      [
+       -0.1758,
+       -0.4303
+      ]
+     ],
+     "holes": []
+    }
+   ],
+   "roof": "flat",
+   "height": null,
+   "heightStatus": "unknown",
+   "floors": null,
+   "modelReference": "Stepped cluster 5-4-3 north of the garden.",
+   "satelliteEvidence": "Terracotta roof with teal panel.",
+   "notes": "Model/satellite disagree strongly (D3).",
+   "changedInV02": "Traced from zoom."
+  },
+  {
+   "id": "N4",
+   "name": "Building 4",
+   "label": "Bldg 4",
+   "identityStatus": "provisional",
+   "provisional": true,
+   "identityConfidence": "low",
+   "footprintConfidence": "medium",
+   "footprints": [
+    {
+     "outer": [
+      [
+       -0.0455,
+       -0.597
+      ],
+      [
+       0.0697,
+       -0.597
+      ],
+      [
+       0.0697,
+       -0.4303
+      ],
+      [
+       -0.0455,
+       -0.4303
+      ]
+     ],
+     "holes": [
+      [
+       [
+        -0.0242,
+        -0.5394
+       ],
+       [
+        0.0485,
+        -0.5394
+       ],
+       [
+        0.0485,
+        -0.4788
+       ],
+       [
+        -0.0242,
+        -0.4788
+       ]
+      ]
+     ]
+    }
+   ],
+   "roof": "flat",
+   "height": null,
+   "heightStatus": "unknown",
+   "floors": null,
+   "modelReference": "Top/centre of the cluster.",
+   "satelliteEvidence": "Taller footprint, teal pyramid on the axis.",
+   "notes": "See D3.",
+   "changedInV02": "Traced from zoom."
+  },
+  {
+   "id": "N3",
+   "name": "Building 3",
+   "label": "Bldg 3",
+   "identityStatus": "provisional",
+   "provisional": true,
+   "identityConfidence": "low",
+   "footprintConfidence": "medium",
+   "footprints": [
+    {
+     "outer": [
+      [
+       0.0697,
+       -0.5697
+      ],
+      [
+       0.2121,
+       -0.5697
+      ],
+      [
+       0.2121,
+       -0.4303
+      ],
+      [
+       0.0697,
+       -0.4303
+      ]
+     ],
+     "holes": []
+    }
+   ],
+   "roof": "flat",
+   "height": null,
+   "heightStatus": "unknown",
+   "floors": null,
+   "modelReference": "East of centre in the cluster.",
+   "satelliteEvidence": "Terracotta roof with teal panel.",
+   "notes": "See D3.",
+   "changedInV02": "v0.3: Traced from zoom."
+  },
+  {
+   "id": "N_NE",
+   "name": "North wing, east block (unlabelled)",
+   "label": "",
+   "identityStatus": "unidentified",
+   "provisional": true,
+   "identityConfidence": "low",
+   "footprintConfidence": "medium",
+   "footprints": [
+    {
+     "outer": [
+      [
+       0.2121,
+       -0.5091
+      ],
+      [
+       0.3879,
+       -0.5091
+      ],
+      [
+       0.3879,
+       -0.4303
+      ],
+      [
+       0.2121,
+       -0.4303
+      ]
+     ],
+     "holes": []
+    }
+   ],
+   "roof": "flat",
+   "height": null,
+   "heightStatus": "unknown",
+   "floors": null,
+   "modelReference": "Long front block facing the garden.",
+   "satelliteEvidence": "Teal pyramid at west end, grey flat roof.",
+   "notes": "",
+   "changedInV02": ""
+  },
+  {
+   "id": "CENTRAL_PAV",
+   "name": "Central garden pavilion",
+   "label": "central pavilion",
+   "identityStatus": "unidentified",
+   "provisional": true,
+   "identityConfidence": "low",
+   "footprintConfidence": "low",
+   "footprints": [
+    {
+     "outer": [
+      [
+       -0.0848,
+       -0.1212
+      ],
+      [
+       0.0758,
+       -0.1212
+      ],
+      [
+       0.0758,
+       0.097
+      ],
+      [
+       -0.0848,
+       0.097
+      ]
+     ],
+     "holes": []
+    }
+   ],
+   "roof": "flat",
+   "height": null,
+   "heightStatus": "unknown",
+   "floors": null,
+   "modelReference": "Square flat-roofed pavilion with palm.",
+   "satelliteEvidence": "Grey roof under the map label; extent partly hidden.",
+   "notes": "Function unknown.",
+   "changedInV02": ""
+  },
+  {
+   "id": "AMPHI_6",
+   "name": "Amphi 6",
+   "label": "Amphi 6",
+   "identityStatus": "provisional",
+   "provisional": true,
+   "identityConfidence": "low",
+   "footprintConfidence": "high",
+   "footprints": [
+    {
+     "outer": [
+      [
+       -0.8091,
+       0.2506
+      ],
+      [
+       -0.6515,
+       0.2506
+      ],
+      [
+       -0.6515,
+       0.4657
+      ],
+      [
+       -0.8091,
+       0.4657
+      ]
+     ],
+     "holes": []
+    }
+   ],
+   "roof": "flat",
+   "height": null,
+   "heightStatus": "unknown",
+   "floors": null,
+   "modelReference": "Label 'Amphi 6' beside a free-standing block west of the garden.",
+   "satelliteEvidence": "Free-standing flat-roof block with a stepped south edge.",
+   "notes": "Identity chosen mainly by symmetry with Amphi 2 (D8).",
+   "changedInV02": "Footprint traced from zoom (high); identity remains provisional."
+  },
+  {
+   "id": "AMPHI_2",
+   "name": "Amphi 2",
+   "label": "Amphi 2",
+   "identityStatus": "provisional",
+   "provisional": true,
+   "identityConfidence": "low",
+   "footprintConfidence": "high",
+   "footprints": [
+    {
+     "outer": [
+      [
+       0.6424,
+       0.1818
+      ],
+      [
+       0.797,
+       0.1818
+      ],
+      [
+       0.797,
+       0.3727
+      ],
+      [
+       0.6424,
+       0.3727
+      ]
+     ],
+     "holes": []
+    }
+   ],
+   "roof": "flat",
+   "height": null,
+   "heightStatus": "unknown",
+   "floors": null,
+   "modelReference": "Label 'Amphi 2' beside a free-standing block east of the garden.",
+   "satelliteEvidence": "Free-standing flat-roof block, stepped south edge.",
+   "notes": "See Amphi 6.",
+   "changedInV02": "Footprint traced from zoom."
+  },
+  {
+   "id": "NW_COURT",
+   "name": "NW courtyard building",
+   "label": "NW court bldg",
+   "identityStatus": "unidentified",
+   "provisional": true,
+   "identityConfidence": "low",
+   "footprintConfidence": "medium",
+   "footprints": [
+    {
+     "outer": [
+      [
+       -0.8636,
+       -0.5818
+      ],
+      [
+       -0.4788,
+       -0.5818
+      ],
+      [
+       -0.4788,
+       -0.2485
+      ],
+      [
+       -0.8636,
+       -0.2485
+      ]
+     ],
+     "holes": [
+      [
+       [
+        -0.7879,
+        -0.403
+       ],
+       [
+        -0.6364,
+        -0.403
+       ],
+       [
+        -0.6364,
+        -0.2788
+       ],
+       [
+        -0.7879,
+        -0.2788
+       ]
+      ]
+     ]
+    }
+   ],
+   "roof": "flat",
+   "height": null,
+   "heightStatus": "unknown",
+   "floors": null,
+   "modelReference": "Large courtyard building, top-left of the model.",
+   "satelliteEvidence": "Building ring around a dark inner court with a teal element.",
+   "notes": "",
+   "changedInV02": ""
+  },
+  {
+   "id": "NE_COURT",
+   "name": "NE courtyard building",
+   "label": "NE court bldg",
+   "identityStatus": "unidentified",
+   "provisional": true,
+   "identityConfidence": "low",
+   "footprintConfidence": "high",
+   "footprints": [
+    {
+     "outer": [
+      [
+       0.5848,
+       -0.5545
+      ],
+      [
+       0.803,
+       -0.5545
+      ],
+      [
+       0.803,
+       -0.303
+      ],
+      [
+       0.5848,
+       -0.303
+      ]
+     ],
+     "holes": []
+    }
+   ],
+   "roof": "flat",
+   "height": null,
+   "heightStatus": "unknown",
+   "floors": null,
+   "modelReference": "Large courtyard building, top-right of the model, near the Buvette label.",
+   "satelliteEvidence": "Square block, teal pyramid roof (x570-608, y188-222).",
+   "notes": "Do not assume this is the Buvette (D7).",
+   "changedInV02": ""
+  },
+  {
+   "id": "SE_COMPLEX",
+   "name": "SE courtyard complex",
+   "label": "SE court complex",
+   "identityStatus": "unidentified",
+   "provisional": true,
+   "identityConfidence": "low",
+   "footprintConfidence": "high",
+   "footprints": [
+    {
+     "outer": [
+      [
+       0.5818,
+       0.4939
+      ],
+      [
+       0.8242,
+       0.4939
+      ],
+      [
+       0.8242,
+       0.6152
+      ],
+      [
+       0.9697,
+       0.6152
+      ],
+      [
+       0.9697,
+       1.0909
+      ],
+      [
+       0.6303,
+       1.0909
+      ],
+      [
+       0.6303,
+       0.9758
+      ],
+      [
+       0.5152,
+       0.9758
+      ],
+      [
+       0.5152,
+       0.6152
+      ],
+      [
+       0.5818,
+       0.6152
+      ]
+     ],
+     "holes": [
+      [
+       [
+        0.6515,
+        0.6273
+       ],
+       [
+        0.7939,
+        0.6273
+       ],
+       [
+        0.7939,
+        0.9545
+       ],
+       [
+        0.6515,
+        0.9545
+       ]
+      ]
+     ]
+    }
+   ],
+   "roof": "flat",
+   "height": null,
+   "heightStatus": "unknown",
+   "floors": null,
+   "modelReference": "Courtyard building at bottom-right of the model.",
+   "satelliteEvidence": "Ring building around a green court, PV arrays on east part.",
+   "notes": "Larger than the model (D4).",
+   "changedInV02": ""
+  },
+  {
+   "id": "HALL_W",
+   "name": "Carports (white tensile shades)",
+   "label": "white hall (carports)",
+   "identityStatus": "unidentified",
+   "provisional": true,
+   "identityConfidence": "low",
+   "footprintConfidence": "high",
+   "footprints": [
+    {
+     "outer": [
+      [
+       -0.6606,
+       -0.8
+      ],
+      [
+       -0.1939,
+       -0.8
+      ],
+      [
+       -0.1939,
+       -0.7182
+      ],
+      [
+       -0.6606,
+       -0.7182
+      ]
+     ],
+     "holes": []
+    }
+   ],
+   "roof": "flat",
+   "height": null,
+   "heightStatus": "unknown",
+   "floors": null,
+   "modelReference": "Possibly the small blocks at the top edge of the model.",
+   "satelliteEvidence": "Long white roof beside the service road.",
+   "notes": "Field photos \"Boulevard entre white halls\": rows of white umbrella shades over parking bays beside the boulevard.",
+   "changedInV02": ""
+  },
+  {
+   "id": "HALL_E",
+   "name": "Carports (white tensile shades)",
+   "label": "white hall (carports)",
+   "identityStatus": "unidentified",
+   "provisional": true,
+   "identityConfidence": "low",
+   "footprintConfidence": "high",
+   "footprints": [
+    {
+     "outer": [
+      [
+       0.2212,
+       -0.7818
+      ],
+      [
+       0.7273,
+       -0.7818
+      ],
+      [
+       0.7273,
+       -0.703
+      ],
+      [
+       0.2212,
+       -0.703
+      ]
+     ],
+     "holes": []
+    }
+   ],
+   "roof": "flat",
+   "height": null,
+   "heightStatus": "unknown",
+   "floors": null,
+   "modelReference": "Possibly the small block at the top-right of the model.",
+   "satelliteEvidence": "Long white roof beside the service road.",
+   "notes": "Field photos \"Boulevard entre white halls\": rows of white umbrella shades over parking bays beside the boulevard.",
+   "changedInV02": ""
+  },
+  {
+   "id": "S1",
+   "name": "South building S1",
+   "label": "S1",
+   "identityStatus": "outside_model",
+   "provisional": true,
+   "identityConfidence": "medium",
+   "footprintConfidence": "high",
+   "footprints": [
+    {
+     "outer": [
+      [
+       -0.2213,
+       0.8303
+      ],
+      [
+       -0.0728,
+       0.8303
+      ],
+      [
+       -0.0728,
+       1.0091
+      ],
+      [
+       -0.2213,
+       1.0091
+      ]
+     ],
+     "holes": []
+    }
+   ],
+   "roof": "flat",
+   "height": null,
+   "heightStatus": "unknown",
+   "floors": null,
+   "modelReference": "Absent in model.",
+   "satelliteEvidence": "Flat-roof block south of Administration.",
+   "notes": "D2.",
+   "changedInV02": ""
+  },
+  {
+   "id": "S2",
+   "name": "South building S2",
+   "label": "S2",
+   "identityStatus": "outside_model",
+   "provisional": true,
+   "identityConfidence": "medium",
+   "footprintConfidence": "high",
+   "footprints": [
+    {
+     "outer": [
+      [
+       0.106,
+       0.8303
+      ],
+      [
+       0.2454,
+       0.8303
+      ],
+      [
+       0.2454,
+       1.0091
+      ],
+      [
+       0.106,
+       1.0091
+      ]
+     ],
+     "holes": []
+    }
+   ],
+   "roof": "flat",
+   "height": null,
+   "heightStatus": "unknown",
+   "floors": null,
+   "modelReference": "Absent in model.",
+   "satelliteEvidence": "Flat-roof block south of Administration.",
+   "notes": "D2.",
+   "changedInV02": ""
+  },
+  {
+   "id": "S3",
+   "name": "South building S3",
+   "label": "S3",
+   "identityStatus": "outside_model",
+   "provisional": true,
+   "identityConfidence": "medium",
+   "footprintConfidence": "high",
+   "footprints": [
+    {
+     "outer": [
+      [
+       -0.0667,
+       1.0273
+      ],
+      [
+       0.0908,
+       1.0273
+      ],
+      [
+       0.0908,
+       1.2364
+      ],
+      [
+       -0.0667,
+       1.2364
+      ]
+     ],
+     "holes": []
+    }
+   ],
+   "roof": "flat",
+   "height": null,
+   "heightStatus": "unknown",
+   "floors": null,
+   "modelReference": "Absent in model.",
+   "satelliteEvidence": "Larger flat-roof block on the axis.",
+   "notes": "D2.",
+   "changedInV02": ""
+  },
+  {
+   "id": "ORANGE_BLDG",
+   "name": "Terracotta-roof building with PV",
+   "label": "PV bldg",
+   "identityStatus": "outside_model",
+   "provisional": true,
+   "identityConfidence": "low",
+   "footprintConfidence": "high",
+   "footprints": [
+    {
+     "outer": [
+      [
+       -0.5364,
+       0.8212
+      ],
+      [
+       -0.3364,
+       0.8212
+      ],
+      [
+       -0.3364,
+       1.0727
+      ],
+      [
+       -0.5364,
+       1.0727
+      ]
+     ],
+     "holes": []
+    }
+   ],
+   "roof": "flat",
+   "height": null,
+   "heightStatus": "unknown",
+   "floors": null,
+   "modelReference": "Not modelled.",
+   "satelliteEvidence": "Orange roof with solar panels.",
+   "notes": "",
+   "changedInV02": ""
+  },
+  {
+   "id": "PV_BLDG",
+   "name": "PV-roof building",
+   "label": "PV bldg",
+   "identityStatus": "outside_model",
+   "provisional": true,
+   "identityConfidence": "low",
+   "footprintConfidence": "high",
+   "footprints": [
+    {
+     "outer": [
+      [
+       -0.4788,
+       1.0727
+      ],
+      [
+       -0.2364,
+       1.0727
+      ],
+      [
+       -0.2364,
+       1.3273
+      ],
+      [
+       -0.4788,
+       1.3273
+      ]
+     ],
+     "holes": []
+    }
+   ],
+   "roof": "flat",
+   "height": null,
+   "heightStatus": "unknown",
+   "floors": null,
+   "modelReference": "Not modelled.",
+   "satelliteEvidence": "Pink roof, large PV array.",
+   "notes": "",
+   "changedInV02": ""
+  },
+  {
+   "id": "IT_LEARN",
+   "name": "IT Learning Campus (U-shaped building)",
+   "label": "IT Learning Campus",
+   "identityStatus": "outside_model",
+   "provisional": true,
+   "identityConfidence": "medium",
+   "footprintConfidence": "low",
+   "footprints": [
+    {
+     "outer": [
+      [
+       -0.9394,
+       0.7364
+      ],
+      [
+       -0.8182,
+       0.7364
+      ],
+      [
+       -0.8182,
+       0.9848
+      ],
+      [
+       -0.703,
+       0.9848
+      ],
+      [
+       -0.703,
+       0.7364
+      ],
+      [
+       -0.597,
+       0.7364
+      ],
+      [
+       -0.597,
+       1.0909
+      ],
+      [
+       -0.9394,
+       1.0909
+      ]
+     ],
+     "holes": []
+    }
+   ],
+   "roof": "flat",
+   "height": null,
+   "heightStatus": "unknown",
+   "floors": null,
+   "modelReference": "Not modelled.",
+   "satelliteEvidence": "Labelled 'IT Learning Campus' on the map; U-shaped plan, open to the north.",
+   "notes": "Web sources say IT Learning Campus is inside FST Settat since 2005.",
+   "changedInV02": "Replaces v0.1 rectangle with a U polygon."
+  },
+  {
+   "id": "SW_CLUSTER",
+   "name": "South-west cluster",
+   "label": "SW cluster",
+   "identityStatus": "outside_model",
+   "provisional": true,
+   "identityConfidence": "low",
+   "footprintConfidence": "low",
+   "footprints": [
+    {
+     "outer": [
+      [
+       -0.8724,
+       1.2394
+      ],
+      [
+       -0.5452,
+       1.2394
+      ],
+      [
+       -0.5452,
+       1.4182
+      ],
+      [
+       -0.8724,
+       1.4182
+      ]
+     ],
+     "holes": []
+    }
+   ],
+   "roof": "flat",
+   "height": null,
+   "heightStatus": "unknown",
+   "floors": null,
+   "modelReference": "Not modelled.",
+   "satelliteEvidence": "Buildings at the bottom-left of the crop.",
+   "notes": "",
+   "changedInV02": ""
+  },
+  {
+   "id": "E_SMALL1",
+   "name": "Small east building 1",
+   "label": "",
+   "identityStatus": "outside_model",
+   "provisional": true,
+   "identityConfidence": "low",
+   "footprintConfidence": "high",
+   "footprints": [
+    {
+     "outer": [
+      [
+       0.8788,
+       0.2485
+      ],
+      [
+       0.9545,
+       0.2485
+      ],
+      [
+       0.9545,
+       0.3273
+      ],
+      [
+       0.8788,
+       0.3273
+      ]
+     ],
+     "holes": []
+    }
+   ],
+   "roof": "flat",
+   "height": null,
+   "heightStatus": "unknown",
+   "floors": null,
+   "modelReference": "Not modelled.",
+   "satelliteEvidence": "Small flat roof.",
+   "notes": "",
+   "changedInV02": ""
+  },
+  {
+   "id": "E_SMALL2",
+   "name": "Small east building 2",
+   "label": "",
+   "identityStatus": "outside_model",
+   "provisional": true,
+   "identityConfidence": "low",
+   "footprintConfidence": "high",
+   "footprints": [
+    {
+     "outer": [
+      [
+       0.8848,
+       0.4091
+      ],
+      [
+       0.9848,
+       0.4091
+      ],
+      [
+       0.9848,
+       0.4788
+      ],
+      [
+       0.8848,
+       0.4788
+      ]
+     ],
+     "holes": []
+    }
+   ],
+   "roof": "flat",
+   "height": null,
+   "heightStatus": "unknown",
+   "floors": null,
+   "modelReference": "Not modelled.",
+   "satelliteEvidence": "Small purple-grey roof.",
+   "notes": "",
+   "changedInV02": ""
+  },
+  {
+   "id": "E_SMALL3",
+   "name": "Small east building 3",
+   "label": "",
+   "identityStatus": "outside_model",
+   "provisional": true,
+   "identityConfidence": "low",
+   "footprintConfidence": "medium",
+   "footprints": [
+    {
+     "outer": [
+      [
+       1.1576,
+       1.0303
+      ],
+      [
+       1.2818,
+       1.0303
+      ],
+      [
+       1.2818,
+       1.1576
+      ],
+      [
+       1.1576,
+       1.1576
+      ]
+     ],
+     "holes": []
+    }
+   ],
+   "roof": "flat",
+   "height": null,
+   "heightStatus": "unknown",
+   "floors": null,
+   "modelReference": "Not modelled.",
+   "satelliteEvidence": "Grey roof east of the service roads.",
+   "notes": "",
+   "changedInV02": ""
+  },
+  {
+   "id": "E_WHITE",
+   "name": "East white paved/roof area",
+   "label": "",
+   "identityStatus": "outside_model",
+   "provisional": true,
+   "identityConfidence": "low",
+   "footprintConfidence": "low",
+   "footprints": [
+    {
+     "outer": [
+      [
+       1.1606,
+       0.2333
+      ],
+      [
+       1.2121,
+       0.2333
+      ],
+      [
+       1.2121,
+       0.4848
+      ],
+      [
+       1.1606,
+       0.4848
+      ]
+     ],
+     "holes": []
+    }
+   ],
+   "roof": "flat",
+   "height": null,
+   "heightStatus": "unknown",
+   "floors": null,
+   "modelReference": "Not modelled.",
+   "satelliteEvidence": "Bright white rectangle; roof or paving unknown.",
+   "notes": "",
+   "changedInV02": ""
+  },
+  {
+   "id": "E_PV",
+   "name": "East PV structure",
+   "label": "E PV",
+   "identityStatus": "outside_model",
+   "provisional": true,
+   "identityConfidence": "low",
+   "footprintConfidence": "high",
+   "footprints": [
+    {
+     "outer": [
+      [
+       1.2061,
+       0.5364
+      ],
+      [
+       1.3,
+       0.5364
+      ],
+      [
+       1.3,
+       0.7364
+      ],
+      [
+       1.2061,
+       0.7364
+      ]
+     ],
+     "holes": []
+    }
+   ],
+   "roof": "flat",
+   "height": null,
+   "heightStatus": "unknown",
+   "floors": null,
+   "modelReference": "Not modelled.",
+   "satelliteEvidence": "PV panel array.",
+   "notes": "",
+   "changedInV02": ""
+  },
+  {
+   "id": "SB1",
+   "name": "South-east building SB1",
+   "label": "SB1",
+   "identityStatus": "outside_model",
+   "provisional": true,
+   "identityConfidence": "low",
+   "footprintConfidence": "high",
+   "footprints": [
+    {
+     "outer": [
+      [
+       0.5909,
+       1.3485
+      ],
+      [
+       0.7212,
+       1.3485
+      ],
+      [
+       0.7212,
+       1.4636
+      ],
+      [
+       0.5909,
+       1.4636
+      ]
+     ],
+     "holes": []
+    }
+   ],
+   "roof": "flat",
+   "height": null,
+   "heightStatus": "unknown",
+   "floors": null,
+   "modelReference": "Not modelled.",
+   "satelliteEvidence": "Flat grey roof, south of the south road.",
+   "notes": "",
+   "changedInV02": ""
+  },
+  {
+   "id": "SB2",
+   "name": "South-east building SB2",
+   "label": "SB2",
+   "identityStatus": "outside_model",
+   "provisional": true,
+   "identityConfidence": "low",
+   "footprintConfidence": "high",
+   "footprints": [
+    {
+     "outer": [
+      [
+       0.8697,
+       1.3394
+      ],
+      [
+       1.0152,
+       1.3394
+      ],
+      [
+       1.0152,
+       1.4697
+      ],
+      [
+       0.8697,
+       1.4697
+      ]
+     ],
+     "holes": []
+    }
+   ],
+   "roof": "flat",
+   "height": null,
+   "heightStatus": "unknown",
+   "floors": null,
+   "modelReference": "Not modelled.",
+   "satelliteEvidence": "Flat grey roof, south of the south road.",
+   "notes": "",
+   "changedInV02": ""
+  },
+  {
+   "id": "SB3",
+   "name": "South-east building SB3",
+   "label": "SB3",
+   "identityStatus": "outside_model",
+   "provisional": true,
+   "identityConfidence": "low",
+   "footprintConfidence": "high",
+   "footprints": [
+    {
+     "outer": [
+      [
+       0.3636,
+       1.3394
+      ],
+      [
+       0.4636,
+       1.3394
+      ],
+      [
+       0.4636,
+       1.4455
+      ],
+      [
+       0.3636,
+       1.4455
+      ]
+     ],
+     "holes": []
+    }
+   ],
+   "roof": "flat",
+   "height": null,
+   "heightStatus": "unknown",
+   "floors": null,
+   "modelReference": "Not modelled.",
+   "satelliteEvidence": "Terracotta roof, south of the south road.",
+   "notes": "",
+   "changedInV02": ""
+  },
+  {
+   "id": "W_STRIP",
+   "name": "Greenhouse (serre)",
+   "label": "greenhouse",
+   "identityStatus": "outside_model",
+   "provisional": true,
+   "identityConfidence": "low",
+   "footprintConfidence": "medium",
+   "footprints": [
+    {
+     "outer": [
+      [
+       -0.945,
+       1.26
+      ],
+      [
+       -0.895,
+       1.26
+      ],
+      [
+       -0.895,
+       1.4
+      ],
+      [
+       -0.945,
+       1.4
+      ]
+     ],
+     "holes": []
+    }
+   ],
+   "roof": "flat",
+   "height": null,
+   "heightStatus": "unknown",
+   "floors": null,
+   "modelReference": "Not modelled.",
+   "satelliteEvidence": "White roof across the west road.",
+   "notes": "Field photo \"Boulevard entre NW court bldg et IT Learning campus\": glass gable greenhouse on the west road.",
+   "changedInV02": ""
+  },
+  {
+   "id": "W_ACR1",
+   "name": "Centre de copie",
+   "label": "Centre de copie",
+   "identityStatus": "outside_model",
+   "provisional": true,
+   "identityConfidence": "low",
+   "footprintConfidence": "medium",
+   "footprints": [
+    {
+     "outer": [
+      [
+       -1.0815,
+       0.3582
+      ],
+      [
+       -1.0095,
+       0.3582
+      ],
+      [
+       -1.0095,
+       0.4412
+      ],
+      [
+       -1.0815,
+       0.4412
+      ]
+     ],
+     "holes": []
+    }
+   ],
+   "roof": "flat",
+   "height": null,
+   "heightStatus": "unknown",
+   "floors": null,
+   "modelReference": "Not modelled.",
+   "satelliteEvidence": "Grey roof across the west road.",
+   "notes": "v0.7c: small white copy shop north of the Buvette (opposite side from the pitch), beige strip between the two.",
+   "changedInV02": ""
+  },
+  {
+   "id": "BUVETTE",
+   "name": "Buvette (cafeteria)",
+   "label": "Buvette",
+   "identityStatus": "provisional",
+   "provisional": true,
+   "identityConfidence": "medium",
+   "footprintConfidence": "medium",
+   "footprints": [
+    {
+     "outer": [
+      [
+       -1.0909,
+       0.5212
+      ],
+      [
+       -1.0061,
+       0.5212
+      ],
+      [
+       -1.0061,
+       0.697
+      ],
+      [
+       -1.0909,
+       0.697
+      ]
+     ],
+     "holes": []
+    }
+   ],
+   "roof": "flat",
+   "height": null,
+   "heightStatus": "unknown",
+   "floors": null,
+   "modelReference": "Requested: the Bibliothèque is removed and a Buvette is placed at almost the same place, but across the boulevard (west road).",
+   "satelliteEvidence": "Footprint of the former \"Building across west road 2\" (same z range as the removed Bibliothèque, other side of the west road).",
+   "notes": "Exterior styled after the NE court building (cream walls, brick piers, arches, green hip roof); interior from the user photo (pool table, tables, counter).",
+   "changedInV02": "",
+   "changedInV04": "New: replaces W_ACR2 and the Bibliothèque."
+  },
+  {
+   "id": "IT_ENTRANCE",
+   "name": "IT Learning Campus entrance block",
+   "label": "IT Learning entrance",
+   "identityStatus": "outside_model",
+   "provisional": true,
+   "identityConfidence": "medium",
+   "footprintConfidence": "high",
+   "footprints": [
+    {
+     "outer": [
+      [
+       -0.8182,
+       0.6697
+      ],
+      [
+       -0.703,
+       0.6697
+      ],
+      [
+       -0.703,
+       0.7364
+      ],
+      [
+       -0.8182,
+       0.7364
+      ]
+     ],
+     "holes": []
+    }
+   ],
+   "roof": "flat",
+   "height": null,
+   "heightStatus": "unknown",
+   "floors": null,
+   "modelReference": "Absent in model.",
+   "satelliteEvidence": "Flat-roof block south of Administration.",
+   "notes": "D2.",
+   "changedInV02": ""
+  },
+  {
+   "id": "BUVETTE_PROFS",
+   "name": "Buvette des profs",
+   "label": "Buvette des profs",
+   "identityStatus": "named_in_model",
+   "provisional": false,
+   "identityConfidence": "medium",
+   "footprintConfidence": "medium",
+   "footprints": [
+    {
+     "outer": [
+      [
+       -0.486,
+       0.6152
+      ],
+      [
+       -0.3667,
+       0.6152
+      ],
+      [
+       -0.3667,
+       0.708
+      ],
+      [
+       -0.486,
+       0.708
+      ]
+     ],
+     "holes": []
+    }
+   ],
+   "roof": "flat",
+   "height": null,
+   "heightStatus": "unknown",
+   "floors": null,
+   "modelReference": "user list v0.7c",
+   "satelliteEvidence": "",
+   "notes": "",
+   "changedInV02": ""
+  },
+  {
+   "id": "HALL_BW",
+   "name": "White hall (boulevard buvette, west side)",
+   "label": "White hall (boulevard buvette, west side)",
+   "identityStatus": "named_in_model",
+   "provisional": false,
+   "identityConfidence": "medium",
+   "footprintConfidence": "medium",
+   "footprints": [
+    {
+     "outer": [
+      [
+       -1.085,
+       -0.155
+      ],
+      [
+       -1.012,
+       -0.155
+      ],
+      [
+       -1.012,
+       0.2552
+      ],
+      [
+       -1.085,
+       0.2552
+      ]
+     ],
+     "holes": []
+    }
+   ],
+   "roof": "flat",
+   "height": null,
+   "heightStatus": "unknown",
+   "floors": null,
+   "modelReference": "user list v0.7c",
+   "satelliteEvidence": "",
+   "notes": "",
+   "changedInV02": ""
+  },
+  {
+   "id": "HALL_BE",
+   "name": "White hall (boulevard buvette, east side)",
+   "label": "White hall (boulevard buvette, east side)",
+   "identityStatus": "named_in_model",
+   "provisional": false,
+   "identityConfidence": "medium",
+   "footprintConfidence": "medium",
+   "footprints": [
+    {
+     "outer": [
+      [
+       -0.925,
+       -0.16
+      ],
+      [
+       -0.858,
+       -0.16
+      ],
+      [
+       -0.858,
+       0.1
+      ],
+      [
+       -0.925,
+       0.1
+      ]
+     ],
+     "holes": []
+    }
+   ],
+   "roof": "flat",
+   "height": null,
+   "heightStatus": "unknown",
+   "floors": null,
+   "modelReference": "user list v0.7c",
+   "satelliteEvidence": "",
+   "notes": "",
+   "changedInV02": ""
+  },
+  {
+   "id": "GATE_BOOTH",
+   "name": "Poste de garde (entree principale)",
+   "label": "Poste de garde (entree principale)",
+   "identityStatus": "named_in_model",
+   "provisional": false,
+   "identityConfidence": "medium",
+   "footprintConfidence": "medium",
+   "footprints": [
+    {
+     "outer": [
+      [
+       0.8805,
+       0.0725
+      ],
+      [
+       0.9195,
+       0.0725
+      ],
+      [
+       0.9195,
+       0.1005
+      ],
+      [
+       0.8805,
+       0.1005
+      ]
+     ],
+     "holes": []
+    }
+   ],
+   "roof": "flat",
+   "height": null,
+   "heightStatus": "unknown",
+   "floors": null,
+   "modelReference": "user list v0.7c",
+   "satelliteEvidence": "",
+   "notes": "",
+   "changedInV02": ""
+  },
+  {
+   "id": "CITE_1",
+   "name": "Cité universitaire",
+   "label": "",
+   "identityStatus": "named_in_model",
+   "provisional": false,
+   "identityConfidence": "low",
+   "footprintConfidence": "low",
+   "footprints": [
+    {
+     "outer": [
+      [
+       -1.345,
+       -0.8
+      ],
+      [
+       -1.235,
+       -0.8
+      ],
+      [
+       -1.235,
+       -0.55
+      ],
+      [
+       -1.345,
+       -0.55
+      ]
+     ],
+     "holes": []
+    }
+   ],
+   "roof": "flat",
+   "height": null,
+   "heightStatus": "unknown",
+   "floors": null,
+   "modelReference": "user v0.7e",
+   "satelliteEvidence": "",
+   "notes": "Cite universitaire: houses behind the boundary wall (not accessible).",
+   "changedInV02": ""
+  },
+  {
+   "id": "CITE_2",
+   "name": "Cité universitaire",
+   "label": "",
+   "identityStatus": "named_in_model",
+   "provisional": false,
+   "identityConfidence": "low",
+   "footprintConfidence": "low",
+   "footprints": [
+    {
+     "outer": [
+      [
+       -1.345,
+       -0.5
+      ],
+      [
+       -1.235,
+       -0.5
+      ],
+      [
+       -1.235,
+       -0.25
+      ],
+      [
+       -1.345,
+       -0.25
+      ]
+     ],
+     "holes": []
+    }
+   ],
+   "roof": "flat",
+   "height": null,
+   "heightStatus": "unknown",
+   "floors": null,
+   "modelReference": "user v0.7e",
+   "satelliteEvidence": "",
+   "notes": "Cite universitaire: houses behind the boundary wall (not accessible).",
+   "changedInV02": ""
+  },
+  {
+   "id": "CITE_3",
+   "name": "Cité universitaire",
+   "label": "",
+   "identityStatus": "named_in_model",
+   "provisional": false,
+   "identityConfidence": "low",
+   "footprintConfidence": "low",
+   "footprints": [
+    {
+     "outer": [
+      [
+       -1.345,
+       -0.2
+      ],
+      [
+       -1.235,
+       -0.2
+      ],
+      [
+       -1.235,
+       0.05
+      ],
+      [
+       -1.345,
+       0.05
+      ]
+     ],
+     "holes": []
+    }
+   ],
+   "roof": "flat",
+   "height": null,
+   "heightStatus": "unknown",
+   "floors": null,
+   "modelReference": "user v0.7e",
+   "satelliteEvidence": "",
+   "notes": "Cite universitaire: houses behind the boundary wall (not accessible).",
+   "changedInV02": ""
+  },
+  {
+   "id": "CITE_4",
+   "name": "Cité universitaire",
+   "label": "",
+   "identityStatus": "named_in_model",
+   "provisional": false,
+   "identityConfidence": "low",
+   "footprintConfidence": "low",
+   "footprints": [
+    {
+     "outer": [
+      [
+       -1.345,
+       0.1
+      ],
+      [
+       -1.235,
+       0.1
+      ],
+      [
+       -1.235,
+       0.35
+      ],
+      [
+       -1.345,
+       0.35
+      ]
+     ],
+     "holes": []
+    }
+   ],
+   "roof": "flat",
+   "height": null,
+   "heightStatus": "unknown",
+   "floors": null,
+   "modelReference": "user v0.7e",
+   "satelliteEvidence": "",
+   "notes": "Cite universitaire: houses behind the boundary wall (not accessible).",
+   "changedInV02": ""
+  },
+  {
+   "id": "CITE_5",
+   "name": "Cité universitaire",
+   "label": "",
+   "identityStatus": "named_in_model",
+   "provisional": false,
+   "identityConfidence": "low",
+   "footprintConfidence": "low",
+   "footprints": [
+    {
+     "outer": [
+      [
+       -1.345,
+       0.4
+      ],
+      [
+       -1.235,
+       0.4
+      ],
+      [
+       -1.235,
+       0.65
+      ],
+      [
+       -1.345,
+       0.65
+      ]
+     ],
+     "holes": []
+    }
+   ],
+   "roof": "flat",
+   "height": null,
+   "heightStatus": "unknown",
+   "floors": null,
+   "modelReference": "user v0.7e",
+   "satelliteEvidence": "",
+   "notes": "Cite universitaire: houses behind the boundary wall (not accessible).",
+   "changedInV02": ""
+  },
+  {
+   "id": "CITE_6",
+   "name": "Cité universitaire",
+   "label": "",
+   "identityStatus": "named_in_model",
+   "provisional": false,
+   "identityConfidence": "low",
+   "footprintConfidence": "low",
+   "footprints": [
+    {
+     "outer": [
+      [
+       -1.345,
+       0.7
+      ],
+      [
+       -1.235,
+       0.7
+      ],
+      [
+       -1.235,
+       0.95
+      ],
+      [
+       -1.345,
+       0.95
+      ]
+     ],
+     "holes": []
+    }
+   ],
+   "roof": "flat",
+   "height": null,
+   "heightStatus": "unknown",
+   "floors": null,
+   "modelReference": "user v0.7e",
+   "satelliteEvidence": "",
+   "notes": "Cite universitaire: houses behind the boundary wall (not accessible).",
+   "changedInV02": ""
+  }
+ ],
+ "courtyards": [
+  {
+   "id": "C_CENTRAL",
+   "name": "Central garden court",
+   "type": "garden",
+   "confidence": "high",
+   "notes": "Cross-axial garden; four lawn quadrants separated by paths.",
+   "polygon": [
+    [
+     -0.3394,
+     -0.4242
+    ],
+    [
+     0.403,
+     -0.4242
+    ],
+    [
+     0.403,
+     0.4636
+    ],
+    [
+     -0.3394,
+     0.4636
+    ]
+   ]
+  },
+  {
+   "id": "C_NW",
+   "name": "NW building inner court",
+   "type": "garden",
+   "confidence": "medium",
+   "notes": "Dark inner court.",
+   "polygon": [
+    [
+     -0.7879,
+     -0.403
+    ],
+    [
+     -0.6364,
+     -0.403
+    ],
+    [
+     -0.6364,
+     -0.2788
+    ],
+    [
+     -0.7879,
+     -0.2788
+    ]
+   ],
+   "buildingCourt": true,
+   "courtStyle": "beige"
+  },
+  {
+   "id": "C_SE",
+   "name": "SE complex inner court",
+   "type": "garden",
+   "confidence": "high",
+   "notes": "Green court.",
+   "polygon": [
+    [
+     0.6515,
+     0.6273
+    ],
+    [
+     0.7939,
+     0.6273
+    ],
+    [
+     0.7939,
+     0.9545
+    ],
+    [
+     0.6515,
+     0.9545
+    ]
+   ],
+   "buildingCourt": true,
+   "courtStyle": "beige"
+  },
+  {
+   "id": "C_PLAZA_N",
+   "name": "North plaza",
+   "type": "paved",
+   "confidence": "low",
+   "notes": "Light paved patch north of the building cluster.",
+   "polygon": [
+    [
+     -0.103,
+     -0.6606
+    ],
+    [
+     0.1333,
+     -0.6606
+    ],
+    [
+     0.1333,
+     -0.5909
+    ],
+    [
+     -0.103,
+     -0.5909
+    ]
+   ]
+  },
+  {
+   "id": "C_FORECOURT",
+   "name": "South forecourt plaza",
+   "type": "garden",
+   "confidence": "medium",
+   "notes": "Paved plaza south of Administration; semicircular fountain garden at its south end (D2).",
+   "polygon": [
+    [
+     -0.0607,
+     0.7515
+    ],
+    [
+     0.0848,
+     0.7515
+    ],
+    [
+     0.0848,
+     0.9273
+    ],
+    [
+     -0.0607,
+     0.9273
+    ]
+   ]
+  },
+  {
+   "id": "C_FOUNTAIN",
+   "name": "Forecourt curved pergola",
+   "type": "pergola",
+   "confidence": "low",
+   "notes": "Semicircular pergola with a green-tile roof and a curved low wall (field photos \"South forecourt plaza\"). Replaces the assumed fountain.",
+   "polygon": [
+    [
+     -0.0607,
+     0.9273
+    ],
+    [
+     0.0848,
+     0.9273
+    ],
+    [
+     0.0848,
+     1.0
+    ],
+    [
+     -0.0607,
+     1.0
+    ]
+   ]
+  },
+  {
+   "id": "C_ADM",
+   "name": "Administration inner court",
+   "type": "garden",
+   "buildingCourt": true,
+   "courtStyle": "checker",
+   "confidence": "low",
+   "provenance": "assumed",
+   "notes": "Court paved with a dark/cream checkerboard, benches, hedges and green lamps (field photos \"Administration inner court\"); the former turquoise basin was not seen in any photo.",
+   "polygon": [
+    [
+     -0.0354,
+     0.5667
+    ],
+    [
+     0.0596,
+     0.5667
+    ],
+    [
+     0.0596,
+     0.6636
+    ],
+    [
+     -0.0354,
+     0.6636
+    ]
+   ],
+   "raise": 0.68
+  },
+  {
+   "id": "C_N4",
+   "name": "Building 4 inner court",
+   "type": "garden",
+   "buildingCourt": true,
+   "courtStyle": "checker",
+   "confidence": "low",
+   "provenance": "assumed",
+   "notes": "Checkerboard court in front of the three-arch portal (field photo \"Building 4 inner court\").",
+   "polygon": [
+    [
+     -0.0242,
+     -0.5394
+    ],
+    [
+     0.0485,
+     -0.5394
+    ],
+    [
+     0.0485,
+     -0.4788
+    ],
+    [
+     -0.0242,
+     -0.4788
+    ]
+   ]
+  },
+  {
+   "id": "C_WW",
+   "name": "West connector patio",
+   "type": "garden",
+   "buildingCourt": true,
+   "courtStyle": "checker",
+   "confidence": "low",
+   "provenance": "assumed",
+   "notes": "Open patio where the west path crosses the connector (turquoise roof element in the satellite).",
+   "polygon": [
+    [
+     -0.497,
+     -0.019700000000000002
+    ],
+    [
+     -0.4364,
+     -0.019700000000000002
+    ],
+    [
+     -0.4364,
+     0.0501
+    ],
+    [
+     -0.497,
+     0.0501
+    ]
+   ]
+  },
+  {
+   "id": "C_EE",
+   "name": "East connector patio",
+   "type": "garden",
+   "buildingCourt": true,
+   "courtStyle": "checker",
+   "confidence": "low",
+   "provenance": "assumed",
+   "notes": "Open patio where the east path crosses the connector.",
+   "polygon": [
+    [
+     0.4242,
+     -0.019700000000000002
+    ],
+    [
+     0.503,
+     -0.019700000000000002
+    ],
+    [
+     0.503,
+     0.0501
+    ],
+    [
+     0.4242,
+     0.0501
+    ]
+   ]
+  },
+  {
+   "id": "C_IT",
+   "name": "IT Learning inner court",
+   "type": "garden",
+   "buildingCourt": true,
+   "courtStyle": "lawn",
+   "confidence": "medium",
+   "provenance": "inferred",
+   "notes": "Lawn court of the U-shaped IT Learning building, with two-storey arcades around it (field photos).",
+   "polygon": [
+    [
+     -0.8182,
+     0.7364
+    ],
+    [
+     -0.703,
+     0.7364
+    ],
+    [
+     -0.703,
+     0.9848
+    ],
+    [
+     -0.8182,
+     0.9848
+    ]
+   ]
+  }
+ ],
+ "roads": [
+  {
+   "id": "R_NORTH",
+   "name": "North avenue",
+   "widthNU": 0.0727,
+   "confidence": "medium",
+   "centerline": [
+    [
+     -1.0909,
+     -0.9515
+    ],
+    [
+     1.3,
+     -0.9515
+    ]
+   ],
+   "sidewalk": "assumed",
+   "sidewalkWidthNU": 0.012
+  },
+  {
+   "id": "R_RING_W_N",
+   "name": "West road and north service road",
+   "widthNU": 0.0515,
+   "confidence": "medium",
+   "centerline": [
+    [
+     -0.9667,
+     1.0606
+    ],
+    [
+     -0.9667,
+     -0.6209
+    ],
+    [
+     -0.9658,
+     -0.6319
+    ],
+    [
+     -0.9633,
+     -0.6425
+    ],
+    [
+     -0.9591,
+     -0.6527
+    ],
+    [
+     -0.9533,
+     -0.662
+    ],
+    [
+     -0.9462,
+     -0.6704
+    ],
+    [
+     -0.9378,
+     -0.6775
+    ],
+    [
+     -0.9285,
+     -0.6833
+    ],
+    [
+     -0.9183,
+     -0.6875
+    ],
+    [
+     -0.9077,
+     -0.69
+    ],
+    [
+     -0.8967,
+     -0.6909
+    ],
+    [
+     0.8485,
+     -0.6909
+    ]
+   ],
+   "sidewalk": "assumed",
+   "sidewalkWidthNU": 0.012
+  },
+  {
+   "id": "R_SOUTH",
+   "name": "South perimeter road",
+   "widthNU": 0.0394,
+   "confidence": "medium",
+   "centerline": [
+    [
+     -0.9667,
+     1.0606
+    ],
+    [
+     -0.9394,
+     1.1273
+    ],
+    [
+     -0.8636,
+     1.1515
+    ],
+    [
+     -0.5303,
+     1.1667
+    ],
+    [
+     -0.512,
+     1.2
+    ],
+    [
+     -0.512,
+     1.34
+    ],
+    [
+     -0.49,
+     1.385
+    ],
+    [
+     -0.44,
+     1.4
+    ],
+    [
+     -0.2576,
+     1.403
+    ],
+    [
+     0.0394,
+     1.4273
+    ],
+    [
+     0.2121,
+     1.297
+    ],
+    [
+     0.4303,
+     1.1636
+    ],
+    [
+     0.6061,
+     1.1909
+    ],
+    [
+     1.0303,
+     1.1909
+    ]
+   ],
+   "sidewalk": "assumed",
+   "sidewalkWidthNU": 0.012
+  },
+  {
+   "id": "R_EAST_A",
+   "name": "East service road A",
+   "widthNU": 0.0394,
+   "confidence": "medium",
+   "centerline": [
+    [
+     1.0485,
+     0.1212
+    ],
+    [
+     1.0485,
+     1.1909
+    ]
+   ],
+   "sidewalk": "none",
+   "sidewalkWidthNU": 0
+  },
+  {
+   "id": "R_EAST_B",
+   "name": "East service road B",
+   "widthNU": 0.0606,
+   "confidence": "low",
+   "centerline": [
+    [
+     1.1424,
+     0.1667
+    ],
+    [
+     1.1424,
+     0.9394
+    ]
+   ],
+   "sidewalk": "none",
+   "sidewalkWidthNU": 0
+  },
+  {
+   "id": "R_NE_ACCESS",
+   "name": "NE access road",
+   "widthNU": 0.0485,
+   "confidence": "low",
+   "centerline": [
+    [
+     0.9152,
+     -0.9091
+    ],
+    [
+     0.9152,
+     -0.2273
+    ],
+    [
+     0.9394,
+     -0.1515
+    ]
+   ],
+   "sidewalk": "none",
+   "sidewalkWidthNU": 0
+  },
+  {
+   "id": "R_NE_RING",
+   "name": "NE roundabout ring road",
+   "widthNU": 0.0424,
+   "confidence": "medium",
+   "ring": {
+    "center": [
+     1.0758,
+     -0.0758
+    ],
+    "radiusNU": 0.1606,
+    "islandRadiusNU": 0.1303
+   },
+   "sidewalk": "assumed",
+   "sidewalkWidthNU": 0.012
+  },
+  {
+   "id": "R_GATE",
+   "name": "Allee de la grande porte",
+   "widthNU": 0.056,
+   "confidence": "low",
+   "centerline": [
+    [
+     0.0121,
+     -0.835
+    ],
+    [
+     0.0121,
+     -0.6909
+    ]
+   ],
+   "sidewalk": "none",
+   "sidewalkWidthNU": 0
+  }
+ ],
+ "pathways": [
+  {
+   "id": "P_AXIS_NS",
+   "name": "Central N-S axis",
+   "widthNU": 0.0242,
+   "confidence": "medium",
+   "centerline": [
+    [
+     0.0121,
+     -0.6667
+    ],
+    [
+     0.0121,
+     0.4659
+    ]
+   ]
+  },
+  {
+   "id": "P_AXIS_EW",
+   "name": "Central E-W cross path",
+   "widthNU": 0.0182,
+   "confidence": "low",
+   "centerline": [
+    [
+     -0.3394,
+     0.0152
+    ],
+    [
+     0.403,
+     0.0152
+    ]
+   ]
+  },
+  {
+   "id": "P_Q_W",
+   "name": "Quadrant path (west)",
+   "widthNU": 0.0121,
+   "confidence": "low",
+   "centerline": [
+    [
+     -0.1879,
+     -0.4242
+    ],
+    [
+     -0.1879,
+     0.4636
+    ]
+   ]
+  },
+  {
+   "id": "P_Q_E",
+   "name": "Quadrant path (east)",
+   "widthNU": 0.0121,
+   "confidence": "low",
+   "centerline": [
+    [
+     0.197,
+     -0.4242
+    ],
+    [
+     0.197,
+     0.4636
+    ]
+   ]
+  },
+  {
+   "id": "P_Q_N",
+   "name": "Quadrant path (north)",
+   "widthNU": 0.0121,
+   "confidence": "low",
+   "centerline": [
+    [
+     -0.3394,
+     -0.2333
+    ],
+    [
+     0.403,
+     -0.2333
+    ]
+   ]
+  },
+  {
+   "id": "P_Q_S",
+   "name": "Quadrant path (south)",
+   "widthNU": 0.0121,
+   "confidence": "low",
+   "centerline": [
+    [
+     -0.3394,
+     0.2424
+    ],
+    [
+     0.403,
+     0.2424
+    ]
+   ]
+  },
+  {
+   "id": "P_PLAZA_N",
+   "name": "North plaza link",
+   "widthNU": 0.0303,
+   "confidence": "low",
+   "centerline": [
+    [
+     0.0152,
+     -0.6909
+    ],
+    [
+     0.0152,
+     -0.5758
+    ]
+   ]
+  },
+  {
+   "id": "P_FORECOURT",
+   "name": "Forecourt axis",
+   "widthNU": 0.0242,
+   "confidence": "medium",
+   "centerline": [
+    [
+     0.0121,
+     0.7424
+    ],
+    [
+     0.0121,
+     0.9939
+    ]
+   ],
+   "hedges": true
+  },
+  {
+   "id": "P_W_CROSS",
+   "name": "West cross path to Block C/D area",
+   "widthNU": 0.0152,
+   "confidence": "medium",
+   "centerline": [
+    [
+     -0.7788,
+     0.0152
+    ],
+    [
+     -0.5242,
+     0.0152
+    ]
+   ]
+  },
+  {
+   "id": "P_W_LINK",
+   "name": "West link path (north-south)",
+   "widthNU": 0.0091,
+   "confidence": "low",
+   "centerline": [
+    [
+     -0.6273,
+     0.0152
+    ],
+    [
+     -0.6273,
+     0.3848
+    ]
+   ]
+  },
+  {
+   "id": "P_E_PLAZA",
+   "name": "East paved plaza walk",
+   "widthNU": 0.0485,
+   "confidence": "medium",
+   "centerline": [
+    [
+     0.5485,
+     0.0152
+    ],
+    [
+     0.7788,
+     0.0152
+    ]
+   ]
+  },
+  {
+   "id": "P_NE_APPROACH",
+   "name": "NE court approach path",
+   "widthNU": 0.0152,
+   "confidence": "medium",
+   "centerline": [
+    [
+     0.694,
+     0.0152
+    ],
+    [
+     0.694,
+     -0.292
+    ]
+   ],
+   "hedges": true
+  },
+  {
+   "id": "P_S_EW",
+   "name": "P_S_EW",
+   "widthNU": 0.0242,
+   "confidence": "low",
+   "centerline": [
+    [
+     -0.5667,
+     0.8
+    ],
+    [
+     0.09,
+     0.8
+    ]
+   ]
+  },
+  {
+   "id": "P_AMPHI2_LINK",
+   "name": "P_AMPHI2_LINK",
+   "widthNU": 0.02,
+   "confidence": "low",
+   "centerline": [
+    [
+     0.6,
+     0.0152
+    ],
+    [
+     0.6,
+     0.44
+    ],
+    [
+     0.72,
+     0.44
+    ],
+    [
+     0.72,
+     0.4939
+    ]
+   ],
+   "hedges": true
+  },
+  {
+   "id": "P_W_LINK2",
+   "name": "P_W_LINK2",
+   "widthNU": 0.0242,
+   "confidence": "low",
+   "centerline": [
+    [
+     -0.6273,
+     0.3848
+    ],
+    [
+     -0.6273,
+     0.6
+    ]
+   ],
+   "hedges": true
+  },
+  {
+   "id": "P_AMPHI6_BUV",
+   "name": "P_AMPHI6_BUV",
+   "widthNU": 0.03,
+   "confidence": "low",
+   "centerline": [
+    [
+     -0.94,
+     0.6
+    ],
+    [
+     -0.6273,
+     0.6
+    ]
+   ]
+  },
+  {
+   "id": "P_IT_APPROACH",
+   "name": "P_IT_APPROACH",
+   "widthNU": 0.03,
+   "confidence": "low",
+   "centerline": [
+    [
+     -0.7215,
+     0.6
+    ],
+    [
+     -0.7215,
+     0.6697
+    ]
+   ]
+  },
+  {
+   "id": "P_PV_IT",
+   "name": "P_PV_IT",
+   "widthNU": 0.045,
+   "confidence": "low",
+   "centerline": [
+    [
+     -0.567,
+     0.645
+    ],
+    [
+     -0.567,
+     1.165
+    ]
+   ]
+  },
+  {
+   "id": "P_NW_LINK",
+   "name": "P_NW_LINK",
+   "widthNU": 0.03,
+   "confidence": "low",
+   "centerline": [
+    [
+     -0.712,
+     -0.22
+    ],
+    [
+     -0.712,
+     0.0152
+    ]
+   ],
+   "hedges": true
+  },
+  {
+   "id": "P_MAIN_GATE",
+   "name": "Allee de l'entree principale",
+   "widthNU": 0.0485,
+   "confidence": "low",
+   "centerline": [
+    [
+     0.7788,
+     0.0152
+    ],
+    [
+     0.905,
+     0.0152
+    ]
+   ],
+   "surface": "flag"
+  },
+  {
+   "id": "P_B_NE",
+   "name": "Passage entre Block B et NE court bldg (vers le boulevard)",
+   "widthNU": 0.0242,
+   "confidence": "medium",
+   "centerline": [
+    [
+     0.5395,
+     -0.655
+    ],
+    [
+     0.5395,
+     -0.19
+    ]
+   ],
+   "hedges": true,
+   "keepHedges": true
+  },
+  {
+   "id": "P_B_LINK",
+   "name": "Block B - passage",
+   "widthNU": 0.0242,
+   "confidence": "medium",
+   "centerline": [
+    [
+     0.4965,
+     -0.4288
+    ],
+    [
+     0.5395,
+     -0.4288
+    ]
+   ],
+   "hedges": true,
+   "keepHedges": true
+  },
+  {
+   "id": "P_NE_D1",
+   "name": "Passage - porte NE nord",
+   "widthNU": 0.0242,
+   "confidence": "medium",
+   "centerline": [
+    [
+     0.5395,
+     -0.5075
+    ],
+    [
+     0.5597,
+     -0.5075
+    ]
+   ],
+   "hedges": true,
+   "keepHedges": true
+  },
+  {
+   "id": "P_NE_D2",
+   "name": "Passage - porte NE sud",
+   "widthNU": 0.0242,
+   "confidence": "medium",
+   "centerline": [
+    [
+     0.5395,
+     -0.35
+    ],
+    [
+     0.5597,
+     -0.35
+    ]
+   ],
+   "hedges": true,
+   "keepHedges": true
+  },
+  {
+   "id": "P_IT_PROFS",
+   "name": "Passage IT entrance - passage PV",
+   "widthNU": 0.0242,
+   "confidence": "medium",
+   "centerline": [
+    [
+     -0.7215,
+     0.64
+    ],
+    [
+     -0.5,
+     0.64
+    ]
+   ],
+   "hedges": true,
+   "keepHedges": true
+  },
+  {
+   "id": "P_PROFS_FRONT",
+   "name": "Passage vers la buvette des profs",
+   "widthNU": 0.0173,
+   "confidence": "low",
+   "centerline": [
+    [
+     -0.567,
+     0.7195
+    ],
+    [
+     -0.4264,
+     0.7195
+    ],
+    [
+     -0.4264,
+     0.709
+    ]
+   ],
+   "surface": "flag"
+  },
+  {
+   "id": "P_COPY_GAP",
+   "name": "Sol beige entre buvette et centre de copie",
+   "widthNU": 0.08,
+   "confidence": "low",
+   "centerline": [
+    [
+     -1.0965,
+     0.4812
+    ],
+    [
+     -0.9925,
+     0.4812
+    ]
+   ],
+   "surface": "beige"
+  }
+ ],
+ "vegetation": [
+  {
+   "id": "V_AVE_N1",
+   "type": "palm_avenue",
+   "confidence": "medium",
+   "speciesNote": "palms visible; cypress not reliably distinguishable",
+   "line": [
+    [
+     -1.0909,
+     -0.9879
+    ],
+    [
+     1.3,
+     -0.9879
+    ]
+   ],
+   "spacingNU": 0.0394
+  },
+  {
+   "id": "V_AVE_N2",
+   "type": "palm_avenue",
+   "confidence": "medium",
+   "speciesNote": "palms visible; cypress not reliably distinguishable",
+   "line": [
+    [
+     -1.0909,
+     -0.9152
+    ],
+    [
+     1.3,
+     -0.9152
+    ]
+   ],
+   "spacingNU": 0.0394
+  },
+  {
+   "id": "V_AVE_NE_W",
+   "type": "palm_avenue",
+   "confidence": "low",
+   "speciesNote": "palms visible; cypress not reliably distinguishable",
+   "line": [
+    [
+     0.8727,
+     -0.8848
+    ],
+    [
+     0.8727,
+     0.0606
+    ]
+   ],
+   "spacingNU": 0.0455
+  },
+  {
+   "id": "V_AVE_NE_E",
+   "type": "palm_avenue",
+   "confidence": "low",
+   "speciesNote": "palms visible; cypress not reliably distinguishable",
+   "line": [
+    [
+     0.9636,
+     -0.8848
+    ],
+    [
+     0.9636,
+     -0.2273
+    ]
+   ],
+   "spacingNU": 0.0455
+  },
+  {
+   "id": "V_RING",
+   "type": "palm_garden",
+   "confidence": "medium",
+   "speciesNote": "palms visible; cypress not reliably distinguishable",
+   "circle": {
+    "center": [
+     1.0758,
+     -0.0758
+    ],
+    "radiusNU": 0.1303
+   }
+  },
+  {
+   "id": "V_G_W1",
+   "type": "mixed_grove",
+   "confidence": "low",
+   "speciesNote": "palms visible; cypress not reliably distinguishable",
+   "polygon": [
+    [
+     -0.9152,
+     -0.5758
+    ],
+    [
+     -0.7273,
+     -0.5758
+    ],
+    [
+     -0.7273,
+     -0.2364
+    ],
+    [
+     -0.9152,
+     -0.2364
+    ]
+   ]
+  },
+  {
+   "id": "V_G_W2",
+   "type": "mixed_grove",
+   "confidence": "medium",
+   "speciesNote": "palms visible; cypress not reliably distinguishable",
+   "polygon": [
+    [
+     -0.9303,
+     0.1212
+    ],
+    [
+     -0.8091,
+     0.1212
+    ],
+    [
+     -0.8091,
+     0.4636
+    ],
+    [
+     -0.9303,
+     0.4636
+    ]
+   ]
+  },
+  {
+   "id": "V_G_W3",
+   "type": "mixed_grove",
+   "confidence": "medium",
+   "speciesNote": "palms visible; cypress not reliably distinguishable",
+   "polygon": [
+    [
+     -0.7879,
+     0.3424
+    ],
+    [
+     -0.6152,
+     0.3424
+    ],
+    [
+     -0.6152,
+     0.4636
+    ],
+    [
+     -0.7879,
+     0.4636
+    ]
+   ]
+  },
+  {
+   "id": "V_G_W4",
+   "type": "palm_garden_rect",
+   "confidence": "medium",
+   "speciesNote": "palms visible; cypress not reliably distinguishable",
+   "polygon": [
+    [
+     -0.6061,
+     0.1515
+    ],
+    [
+     -0.5091,
+     0.1515
+    ],
+    [
+     -0.5091,
+     0.3182
+    ],
+    [
+     -0.6061,
+     0.3182
+    ]
+   ]
+  },
+  {
+   "id": "V_G_N1",
+   "type": "mixed_grove",
+   "confidence": "low",
+   "speciesNote": "palms visible; cypress not reliably distinguishable",
+   "polygon": [
+    [
+     -0.3333,
+     -0.6727
+    ],
+    [
+     -0.1212,
+     -0.6727
+    ],
+    [
+     -0.1212,
+     -0.5758
+    ],
+    [
+     -0.3333,
+     -0.5758
+    ]
+   ]
+  },
+  {
+   "id": "V_G_N2",
+   "type": "mixed_grove",
+   "confidence": "low",
+   "speciesNote": "palms visible; cypress not reliably distinguishable",
+   "polygon": [
+    [
+     0.2424,
+     -0.6727
+    ],
+    [
+     0.5606,
+     -0.6727
+    ],
+    [
+     0.5606,
+     -0.5697
+    ],
+    [
+     0.2424,
+     -0.5697
+    ]
+   ]
+  },
+  {
+   "id": "V_G_E1",
+   "type": "mixed_grove",
+   "confidence": "low",
+   "speciesNote": "palms visible; cypress not reliably distinguishable",
+   "polygon": [
+    [
+     0.5606,
+     -0.2364
+    ],
+    [
+     0.8485,
+     -0.2364
+    ],
+    [
+     0.8485,
+     0.0152
+    ],
+    [
+     0.5606,
+     0.0152
+    ]
+   ]
+  },
+  {
+   "id": "V_G_E2",
+   "type": "mixed_grove",
+   "confidence": "low",
+   "speciesNote": "palms visible; cypress not reliably distinguishable",
+   "polygon": [
+    [
+     0.5455,
+     0.0303
+    ],
+    [
+     0.8485,
+     0.0303
+    ],
+    [
+     0.8485,
+     0.1667
+    ],
+    [
+     0.5455,
+     0.1667
+    ]
+   ]
+  },
+  {
+   "id": "V_G_NW",
+   "type": "mixed_grove",
+   "confidence": "low",
+   "speciesNote": "palms visible; cypress not reliably distinguishable",
+   "polygon": [
+    [
+     -0.8485,
+     -0.2364
+    ],
+    [
+     -0.5152,
+     -0.2364
+    ],
+    [
+     -0.5152,
+     0.0152
+    ],
+    [
+     -0.8485,
+     0.0152
+    ]
+   ]
+  },
+  {
+   "id": "V_G_S1",
+   "type": "mixed_grove",
+   "confidence": "low",
+   "speciesNote": "palms visible; cypress not reliably distinguishable",
+   "polygon": [
+    [
+     -0.5364,
+     1.1909
+    ],
+    [
+     -0.3424,
+     1.1909
+    ],
+    [
+     -0.3424,
+     1.3545
+    ],
+    [
+     -0.5364,
+     1.3545
+    ]
+   ]
+  },
+  {
+   "id": "V_G_S2",
+   "type": "mixed_grove",
+   "confidence": "medium",
+   "speciesNote": "palms visible; cypress not reliably distinguishable",
+   "polygon": [
+    [
+     0.0697,
+     1.0152
+    ],
+    [
+     0.3727,
+     1.0152
+    ],
+    [
+     0.3727,
+     1.2333
+    ],
+    [
+     0.0697,
+     1.2333
+    ]
+   ]
+  },
+  {
+   "id": "V_G_SE",
+   "type": "mixed_grove",
+   "confidence": "low",
+   "speciesNote": "palms visible; cypress not reliably distinguishable",
+   "polygon": [
+    [
+     1.1303,
+     1.2333
+    ],
+    [
+     1.3,
+     1.2333
+    ],
+    [
+     1.3,
+     1.4909
+    ],
+    [
+     1.1303,
+     1.4909
+    ]
+   ]
+  },
+  {
+   "id": "V_G_S3",
+   "type": "mixed_grove",
+   "confidence": "low",
+   "speciesNote": "palms visible; cypress not reliably distinguishable",
+   "polygon": [
+    [
+     0.0606,
+     1.2727
+    ],
+    [
+     0.3636,
+     1.2727
+    ],
+    [
+     0.3636,
+     1.4848
+    ],
+    [
+     0.0606,
+     1.4848
+    ]
+   ]
+  }
+ ],
+ "entrances": [
+  {
+   "id": "E_MAIN_S",
+   "name": "Main entrance (south axis, model 'Entrée')",
+   "position": [
+    0.0121,
+    1.0061
+   ],
+   "confidence": "low",
+   "notes": "Model: bottom-centre 'Entrée' on the Administration axis. Satellite shows no gate; placed at the south end of the forecourt axis."
+  },
+  {
+   "id": "E_ADMIN",
+   "name": "Administration entrance pavilion",
+   "position": [
+    -0.0182,
+    0.7576
+   ],
+   "confidence": "medium",
+   "notes": "Teal pavilion on the axis."
+  },
+  {
+   "id": "E_WEST",
+   "name": "West entrance (model 'Entrée', left edge)",
+   "position": [
+    -0.9667,
+    0.4242
+   ],
+   "confidence": "low",
+   "notes": "Oblique photo has a second 'Entrée' on the west road; north-south position only roughly known."
+  }
+ ],
+ "teal": [
+  [
+   [
+    -0.103,
+    0.5939
+   ],
+   [
+    0.0667,
+    0.5939
+   ],
+   [
+    0.0667,
+    0.7303
+   ],
+   [
+    -0.103,
+    0.7303
+   ]
+  ],
+  [
+   [
+    0.6364,
+    -0.4606
+   ],
+   [
+    0.7515,
+    -0.4606
+   ],
+   [
+    0.7515,
+    -0.3576
+   ],
+   [
+    0.6364,
+    -0.3576
+   ]
+  ],
+  [
+   [
+    -0.0303,
+    -0.5364
+   ],
+   [
+    0.0545,
+    -0.5364
+   ],
+   [
+    0.0545,
+    -0.4788
+   ],
+   [
+    -0.0303,
+    -0.4788
+   ]
+  ],
+  [
+   [
+    -0.2273,
+    -0.5152
+   ],
+   [
+    -0.1879,
+    -0.5152
+   ],
+   [
+    -0.1879,
+    -0.4455
+   ],
+   [
+    -0.2273,
+    -0.4455
+   ]
+  ],
+  [
+   [
+    0.2121,
+    -0.5
+   ],
+   [
+    0.2515,
+    -0.5
+   ],
+   [
+    0.2515,
+    -0.4333
+   ],
+   [
+    0.2121,
+    -0.4333
+   ]
+  ],
+  [
+   [
+    -0.7424,
+    -0.5364
+   ],
+   [
+    -0.6879,
+    -0.5364
+   ],
+   [
+    -0.6879,
+    -0.4848
+   ],
+   [
+    -0.7424,
+    -0.4848
+   ]
+  ]
+ ],
+ "modelOnlyFeatures": [
+  {
+   "id": "M_FRONT_ROAD",
+   "name": "Model front road with two lawns and gate south of Administration",
+   "status": "not_confirmed_in_satellite"
+  },
+  {
+   "id": "M_PALM_ROWS",
+   "name": "Model double palm rows along the south front",
+   "status": "not_confirmed_in_satellite"
+  }
+ ],
+ "discrepancies": "see v0.1 and FST_Settat_Phase1_Report.md (D1-D9); unchanged",
+ "passages": [
+  {
+   "id": "PS_ADM_S",
+   "building": "ADMIN_C",
+   "centerline": [
+    [
+     0.0121,
+     0.7636
+    ],
+    [
+     0.0121,
+     0.6636
+    ]
+   ],
+   "widthNU": 0.0347,
+   "arch": true,
+   "provenance": "inferred",
+   "confidence": "medium",
+   "evidence": "Axial plan: the Administration pavilion sits on the garden axis. The model shows a turquoise basin on its roof, read here as an inner court with a covered portal on each side (this avoids a 38 m tunnel).",
+   "notes": "",
+   "style": "colonnade",
+   "portal": "arch3"
+  },
+  {
+   "id": "PS_ADM_N",
+   "building": "ADMIN_C",
+   "centerline": [
+    [
+     0.0121,
+     0.5667
+    ],
+    [
+     0.0121,
+     0.4667
+    ]
+   ],
+   "widthNU": 0.0347,
+   "arch": true,
+   "provenance": "inferred",
+   "confidence": "medium",
+   "evidence": "Axial plan: the Administration pavilion sits on the garden axis. The model shows a turquoise basin on its roof, read here as an inner court with a covered portal on each side (this avoids a 38 m tunnel).",
+   "notes": "",
+   "style": "colonnade",
+   "portal": "arch3"
+  },
+  {
+   "id": "PS_N4_S",
+   "building": "N4",
+   "centerline": [
+    [
+     0.0121,
+     -0.4091
+    ],
+    [
+     0.0121,
+     -0.4939
+    ]
+   ],
+   "widthNU": 0.0347,
+   "arch": true,
+   "provenance": "inferred",
+   "confidence": "medium",
+   "evidence": "Oblique model photo: dark arched openings at the centre of the north front and a turquoise feature on top, read here as a loggia with an inner court.",
+   "notes": "",
+   "portal": "arch3"
+  },
+  {
+   "id": "PS_N4_N",
+   "building": "N4",
+   "centerline": [
+    [
+     0.0121,
+     -0.5242
+    ],
+    [
+     0.0121,
+     -0.6182
+    ]
+   ],
+   "widthNU": 0.0347,
+   "arch": true,
+   "provenance": "inferred",
+   "confidence": "medium",
+   "evidence": "Oblique model photo: dark arched openings at the centre of the north front and a turquoise feature on top, read here as a loggia with an inner court.",
+   "notes": "",
+   "portal": "arch3"
+  },
+  {
+   "id": "PS_W_CONN_W",
+   "building": "WING_W_MID",
+   "centerline": [
+    [
+     -0.5758,
+     0.0152
+    ],
+    [
+     -0.4697,
+     0.0152
+    ]
+   ],
+   "widthNU": 0.0333,
+   "arch": false,
+   "provenance": "inferred",
+   "confidence": "medium",
+   "evidence": "Satellite: a paved path meets the connector on both sides and a small turquoise roof element sits exactly where the path crosses; read here as a covered passage with an open patio.",
+   "notes": "",
+   "portal": "arch3"
+  },
+  {
+   "id": "PS_W_CONN_E",
+   "building": "WING_W_MID",
+   "centerline": [
+    [
+     -0.4636,
+     0.0152
+    ],
+    [
+     -0.3455,
+     0.0152
+    ]
+   ],
+   "widthNU": 0.0333,
+   "arch": false,
+   "provenance": "inferred",
+   "confidence": "medium",
+   "evidence": "Satellite: a paved path meets the connector on both sides and a small turquoise roof element sits exactly where the path crosses; read here as a covered passage with an open patio.",
+   "notes": "",
+   "portal": "arch3"
+  },
+  {
+   "id": "PS_E_CONN_W",
+   "building": "WING_E_MID",
+   "centerline": [
+    [
+     0.3455,
+     0.0152
+    ],
+    [
+     0.4606,
+     0.0152
+    ]
+   ],
+   "widthNU": 0.0333,
+   "arch": false,
+   "provenance": "inferred",
+   "confidence": "medium",
+   "evidence": "Satellite: a paved path meets the connector on both sides and a small turquoise roof element sits exactly where the path crosses; read here as a covered passage with an open patio.",
+   "notes": "",
+   "portal": "arch3"
+  },
+  {
+   "id": "PS_E_CONN_E",
+   "building": "WING_E_MID",
+   "centerline": [
+    [
+     0.4667,
+     0.0152
+    ],
+    [
+     0.5667,
+     0.0152
+    ]
+   ],
+   "widthNU": 0.0333,
+   "arch": false,
+   "provenance": "inferred",
+   "confidence": "medium",
+   "evidence": "Satellite: a paved path meets the connector on both sides and a small turquoise roof element sits exactly where the path crosses; read here as a covered passage with an open patio.",
+   "notes": "",
+   "portal": "arch3"
+  },
+  {
+   "id": "PS_SE_COURT",
+   "building": "SE_COMPLEX",
+   "centerline": [
+    [
+     0.497,
+     0.7909
+    ],
+    [
+     0.6697,
+     0.7909
+    ]
+   ],
+   "widthNU": 0.0307,
+   "arch": false,
+   "provenance": "assumed",
+   "confidence": "low",
+   "evidence": "Entrance to the inner court is not visible in the references. A passage on the west side was assumed so the court is reachable.",
+   "notes": ""
+  },
+  {
+   "id": "PS_NW_N",
+   "building": "NW_COURT",
+   "centerline": [
+    [
+     -0.712,
+     -0.62
+    ],
+    [
+     -0.712,
+     -0.4
+    ]
+   ],
+   "widthNU": 0.0307,
+   "arch": false,
+   "provenance": "inferred",
+   "confidence": "medium",
+   "portal": "brick"
+  },
+  {
+   "id": "PS_NW_S",
+   "building": "NW_COURT",
+   "centerline": [
+    [
+     -0.712,
+     -0.28
+    ],
+    [
+     -0.712,
+     -0.22
+    ]
+   ],
+   "widthNU": 0.0307,
+   "arch": false,
+   "provenance": "inferred",
+   "confidence": "medium",
+   "portal": "brick"
+  },
+  {
+   "id": "PS_SE_N",
+   "building": "SE_COMPLEX",
+   "centerline": [
+    [
+     0.72,
+     0.47
+    ],
+    [
+     0.72,
+     0.64
+    ]
+   ],
+   "widthNU": 0.0307,
+   "arch": false,
+   "provenance": "inferred",
+   "confidence": "medium",
+   "portal": "brick"
+  },
+  {
+   "id": "PS_IT_ENTRANCE",
+   "building": "IT_ENTRANCE",
+   "centerline": [
+    [
+     -0.7215,
+     0.64
+    ],
+    [
+     -0.7215,
+     0.76
+    ]
+   ],
+   "widthNU": 0.024,
+   "arch": true,
+   "provenance": "inferred",
+   "confidence": "medium",
+   "portal": "arch3",
+   "floor": "grey"
+  },
+  {
+   "id": "PS_PV_HALL",
+   "building": "ORANGE_BLDG",
+   "centerline": [
+    [
+     -0.32,
+     1.04
+    ],
+    [
+     -0.55,
+     1.04
+    ]
+   ],
+   "widthNU": 0.036,
+   "arch": false,
+   "provenance": "inferred",
+   "confidence": "medium",
+   "floor": "grey"
+  },
+  {
+   "id": "PS_PROFS",
+   "building": "BUVETTE_PROFS",
+   "centerline": [
+    [
+     -0.5,
+     0.64
+    ],
+    [
+     -0.355,
+     0.64
+    ]
+   ],
+   "widthNU": 0.026,
+   "arch": false,
+   "provenance": "inferred",
+   "confidence": "low",
+   "floor": "grey",
+   "evidence": "keeps the Administration yard between W1 and W2 reachable now that the staff buvette is attached to Block D and Administration"
+  }
+ ],
+ "roofFeatures": [
+  {
+   "id": "RF_NE_PYRAMID",
+   "building": "NE_COURT",
+   "type": "teal_pyramid",
+   "polygon": [
+    [
+     0.6364,
+     -0.4606
+    ],
+    [
+     0.7515,
+     -0.4606
+    ],
+    [
+     0.7515,
+     -0.3576
+    ],
+    [
+     0.6364,
+     -0.3576
+    ]
+   ],
+   "provenance": "verified",
+   "confidence": "high",
+   "evidence": "Satellite: turquoise pyramidal roof centred on the NE court building."
+  },
+  {
+   "id": "RF_SE_PV1",
+   "building": "SE_COMPLEX",
+   "type": "pv_array",
+   "polygon": [
+    [
+     0.8091,
+     0.7242
+    ],
+    [
+     0.9303,
+     0.7242
+    ],
+    [
+     0.9303,
+     0.8576
+    ],
+    [
+     0.8091,
+     0.8576
+    ]
+   ],
+   "provenance": "verified",
+   "confidence": "high",
+   "evidence": "Satellite: PV panel rows."
+  },
+  {
+   "id": "RF_SE_PV2",
+   "building": "SE_COMPLEX",
+   "type": "pv_array",
+   "polygon": [
+    [
+     0.8091,
+     0.8818
+    ],
+    [
+     0.9455,
+     0.8818
+    ],
+    [
+     0.9455,
+     1.0727
+    ],
+    [
+     0.8091,
+     1.0727
+    ]
+   ],
+   "provenance": "verified",
+   "confidence": "high",
+   "evidence": "Satellite: PV panel rows."
+  },
+  {
+   "id": "RF_SE_PV3",
+   "building": "SE_COMPLEX",
+   "type": "pv_array",
+   "polygon": [
+    [
+     0.6909,
+     0.9939
+    ],
+    [
+     0.7697,
+     0.9939
+    ],
+    [
+     0.7697,
+     1.0818
+    ],
+    [
+     0.6909,
+     1.0818
+    ]
+   ],
+   "provenance": "verified",
+   "confidence": "high",
+   "evidence": "Satellite: PV panel rows."
+  },
+  {
+   "id": "RF_PVB",
+   "building": "PV_BLDG",
+   "type": "pv_array",
+   "polygon": [
+    [
+     -0.4697,
+     1.097
+    ],
+    [
+     -0.2485,
+     1.097
+    ],
+    [
+     -0.2485,
+     1.3182
+    ],
+    [
+     -0.4697,
+     1.3182
+    ]
+   ],
+   "provenance": "verified",
+   "confidence": "high",
+   "evidence": "Satellite: PV array covers the roof."
+  },
+  {
+   "id": "RF_ORANGE_PV",
+   "building": "ORANGE_BLDG",
+   "type": "pv_array",
+   "polygon": [
+    [
+     -0.4424,
+     0.9303
+    ],
+    [
+     -0.3606,
+     0.9303
+    ],
+    [
+     -0.3606,
+     1.0576
+    ],
+    [
+     -0.4424,
+     1.0576
+    ]
+   ],
+   "provenance": "verified",
+   "confidence": "medium",
+   "evidence": "Satellite: PV rows on part of the roof."
+  },
+  {
+   "id": "RF_E_PV",
+   "building": "E_PV",
+   "type": "pv_array",
+   "polygon": [
+    [
+     1.2121,
+     0.5455
+    ],
+    [
+     1.297,
+     0.5455
+    ],
+    [
+     1.297,
+     0.7333
+    ],
+    [
+     1.2121,
+     0.7333
+    ]
+   ],
+   "provenance": "verified",
+   "confidence": "high",
+   "evidence": "Satellite: PV panel rows."
+  }
+ ],
+ "fences": [
+  {
+   "id": "F_EAST",
+   "kind": "fence",
+   "centerline": [
+    [
+     1.0879,
+     0.1667
+    ],
+    [
+     1.0879,
+     1.197
+    ]
+   ],
+   "confidence": "low"
+  },
+  {
+   "id": "F_NE",
+   "kind": "fence",
+   "centerline": [
+    [
+     0.872,
+     -0.835
+    ],
+    [
+     0.872,
+     -0.14
+    ]
+   ],
+   "gapsNU": [
+    [
+     0.165,
+     0.21
+    ]
+   ],
+   "confidence": "medium",
+   "provenance": "verified (user photos 'fence'): green wrought-iron fence with golden trident finials along the NE access road, double gate leading to the carports"
+  },
+  {
+   "id": "F_MAIN_N",
+   "kind": "fence",
+   "centerline": [
+    [
+     0.872,
+     -0.14
+    ],
+    [
+     0.872,
+     -0.0345
+    ]
+   ],
+   "confidence": "low",
+   "provenance": "v0.7c: boundary fence on both sides of the main gate"
+  },
+  {
+   "id": "F_MAIN_S",
+   "kind": "fence",
+   "centerline": [
+    [
+     0.872,
+     0.0645
+    ],
+    [
+     0.872,
+     0.1775
+    ]
+   ],
+   "confidence": "low",
+   "provenance": "v0.7c"
+  },
+  {
+   "id": "F_N_W",
+   "kind": "fence",
+   "centerline": [
+    [
+     -1.21,
+     -0.835
+    ],
+    [
+     -0.0285,
+     -0.835
+    ]
+   ],
+   "confidence": "low",
+   "provenance": "v0.7e: bars closing the FST along the north street"
+  },
+  {
+   "id": "F_N_E",
+   "kind": "fence",
+   "centerline": [
+    [
+     0.0815,
+     -0.835
+    ],
+    [
+     0.872,
+     -0.835
+    ]
+   ],
+   "confidence": "low",
+   "provenance": "v0.7e"
+  }
+ ],
+ "gates": [
+  {
+   "id": "G_MAIN",
+   "position": [
+    0.0121,
+    0.9818
+   ],
+   "widthNU": 0.1467,
+   "kind": "pillars",
+   "provenance": "inferred",
+   "confidence": "low",
+   "evidence": "Model photos show a gate/arch on the south axis labelled 'Entrée'. In the satellite S3 stands just south of this point (discrepancy D2), so the gate is shown at the forecourt's south end."
+  }
+ ],
+ "discrepancyNotes": {
+  "D2-gate": "The model's main entrance on the south axis is blocked by building S3 in the satellite. Access to the forecourt is along the south front walkway from the west and east."
+ },
+ "features": [
+  {
+   "id": "F_PERGOLA_S",
+   "type": "curved_pergola",
+   "center": [
+    0.0121,
+    0.9273
+   ],
+   "radiusNU": 0.068,
+   "provenance": "verified",
+   "confidence": "medium",
+   "evidence": "Field photos 'South forecourt plaza': semicircular colonnade, green-tile curved roof, low curved wall, rectangular-paver floor.",
+   "platformH": 2.0
+  },
+  {
+   "id": "F_PITCH_W",
+   "type": "pitch",
+   "polygon": [
+    [
+     -1.185,
+     0.7
+    ],
+    [
+     -1.03,
+     0.7
+    ],
+    [
+     -1.03,
+     0.97
+    ],
+    [
+     -1.185,
+     0.97
+    ]
+   ],
+   "provenance": "inferred",
+   "confidence": "low",
+   "evidence": "user list v0.6: pitch attached to the Buvette, facing IT Learning Campus across the boulevard"
+  },
+  {
+   "id": "F_BUMP_N",
+   "type": "speed_bump",
+   "position": [
+    -0.38,
+    -0.6909
+   ],
+   "road": "R_RING_W_N",
+   "provenance": "verified",
+   "confidence": "medium",
+   "evidence": "Field photo 'Boulevard entre white halls': yellow/black speed bump across the boulevard."
+  },
+  {
+   "id": "F_CLOISTER",
+   "type": "cloister_ring",
+   "outerNU": [
+    -0.3939,
+    -0.4303,
+    0.3879,
+    0.4879
+   ],
+   "widthNU": 0.022,
+   "provenance": "inferred",
+   "confidence": "medium",
+   "evidence": "user list v0.6 + photos \"Couloir du Central garden court\": continuous covered corridor round the garden",
+   "southRaise": 1.0
+  },
+  {
+   "id": "F_BRIDGE_SE",
+   "type": "bridge",
+   "points": [
+    [
+     0.502,
+     0.7995
+    ],
+    [
+     0.502,
+     0.44
+    ],
+    [
+     0.565,
+     0.44
+    ]
+   ],
+   "widthM": 3.4,
+   "level": 2.4,
+   "gaps": [
+    [
+     0.502,
+     0.7952,
+     2.8
+    ]
+   ],
+   "provenance": "inferred",
+   "confidence": "low"
+  },
+  {
+   "id": "F_MAIN_GATE",
+   "type": "main_gate",
+   "center": [
+    0.872,
+    0.0152
+   ],
+   "axis": "x",
+   "provenance": "inferred",
+   "confidence": "low",
+   "evidence": "user photo 'entree principale': brick-orange portal with a large central arch and smaller side arches"
+  },
+  {
+   "id": "F_CORNER_NW",
+   "type": "road_corner",
+   "center": [
+    -0.8967,
+    -0.6209
+   ],
+   "radiusNU": 0.07,
+   "provenance": "verified",
+   "confidence": "medium",
+   "evidence": "user photo 'coins de la fst': red/white kerb, grass island with hedge and palms, white lattice fence"
+  },
+  {
+   "id": "F_BUV_GARDEN",
+   "type": "buvette_profs_garden",
+   "rect": [
+    -0.52,
+    0.708,
+    -0.372,
+    0.775
+   ],
+   "provenance": "inferred",
+   "confidence": "low",
+   "evidence": "user v0.7d: brown earth yard with 6 cafe table sets in front of the staff buvette"
+  },
+  {
+   "id": "F_CAR_GATE",
+   "type": "car_gate",
+   "center": [
+    0.0121,
+    -0.835
+   ],
+   "provenance": "inferred",
+   "confidence": "low",
+   "evidence": "user v0.7e: wide gate for cars with a white iron barrier arm, pedestrian door on the right"
+  },
+  {
+   "id": "F_WALL_W",
+   "type": "boundary_wall",
+   "points": [
+    [
+     -1.21,
+     -0.835
+    ],
+    [
+     -1.21,
+     1.1
+    ]
+   ],
+   "heightM": 2.8,
+   "provenance": "inferred",
+   "confidence": "low",
+   "evidence": "user v0.7e: wall behind buvette / pitch / copy centre / white halls, student housing behind"
+  },
+  {
+   "id": "F_PEPPER_PLAZA",
+   "type": "pepper_plaza",
+   "rect": [
+    -0.93,
+    0.4657,
+    -0.642,
+    0.585
+   ],
+   "provenance": "user v0.7f photo 'derriere amphi 6'",
+   "confidence": "medium"
+  }
+ ],
+ "terrain": [
+  {
+   "id": "T_ADMIN",
+   "rect": [
+    -0.3939,
+    0.4659,
+    0.3879,
+    0.756
+   ],
+   "h": 1.0,
+   "run": {
+    "N": 0.4,
+    "S": 4.8,
+    "W": 0.5,
+    "E": 0.5
+   },
+   "buildings": [
+    "ADMIN_W1",
+    "ADMIN_W2",
+    "ADMIN_C",
+    "ADMIN_E1",
+    "ADMIN_E2"
+   ],
+   "stairs": [
+    {
+     "side": "S",
+     "at": 0.0121,
+     "width": 5.5,
+     "landing": 6
+    },
+    {
+     "side": "N",
+     "at": 0.0121,
+     "width": 5.5,
+     "landing": 6,
+     "run": 2.04
+    }
+   ],
+   "provenance": "verified (user photo 'Main entrance'): lawns rise toward the Administration front; central path climbs a flight of ~10 concrete steps"
+  },
+  {
+   "id": "T_NE",
+   "rect": [
+    0.577,
+    -0.562,
+    0.811,
+    -0.295
+   ],
+   "h": 0.85,
+   "run": {
+    "N": 2.4,
+    "S": 3.8,
+    "W": 2.6,
+    "E": 2.6
+   },
+   "buildings": [
+    "NE_COURT"
+   ],
+   "stairs": [
+    {
+     "side": "S",
+     "at": 0.694,
+     "width": 4.2,
+     "landing": 6
+    },
+    {
+     "side": "W",
+     "at": -0.5075,
+     "width": 3.6,
+     "landing": 4
+    },
+    {
+     "side": "W",
+     "at": -0.35,
+     "width": 3.6,
+     "landing": 4
+    }
+   ],
+   "provenance": "verified (user photos 'NE court bldg'): stepped path rises between hedges to the building"
+  },
+  {
+   "id": "T_SE",
+   "rect": [
+    0.507,
+    0.486,
+    0.978,
+    1.1
+   ],
+   "h": 2.4,
+   "run": {
+    "N": 7,
+    "S": 7,
+    "W": 7,
+    "E": 5
+   },
+   "buildings": [
+    "SE_COMPLEX"
+   ],
+   "stairs": [
+    {
+     "side": "N",
+     "at": 0.72,
+     "width": 3.8,
+     "landing": 6
+    }
+   ],
+   "provenance": "verified (user photo 'SE complex'): broad concrete flights between checker landings"
+  },
+  {
+   "id": "T_AMPHI2",
+   "rect": [
+    0.634,
+    0.174,
+    0.805,
+    0.381
+   ],
+   "h": 0.6,
+   "run": 3,
+   "buildings": [
+    "AMPHI_2"
+   ],
+   "stairs": [
+    {
+     "side": "W",
+     "at": 0.215,
+     "width": 3.4,
+     "landing": 5
+    }
+   ],
+   "provenance": "verified (user photo 'Amphi 2'): building stands on a raised slab reached by steps, lawn lower on the other side of the path"
+  },
+  {
+   "id": "T_S3",
+   "rect": [
+    -0.0728,
+    0.9273,
+    0.106,
+    1.2364
+   ],
+   "h": 2.0,
+   "run": {
+    "N": 0.3,
+    "S": 4,
+    "W": 4,
+    "E": 4.1
+   },
+   "buildings": [
+    "S3"
+   ],
+   "stairs": [
+    {
+     "side": "E",
+     "at": 1.06,
+     "width": 3.6,
+     "landing": 6
+    }
+   ],
+   "provenance": "user list v0.7: S3 at the level of the pergola"
+  },
+  {
+   "id": "T_WALK",
+   "rect": [
+    0.1292,
+    0.7909,
+    0.5075,
+    0.8091
+   ],
+   "h": 2.4,
+   "run": {
+    "N": 3.2,
+    "S": 3.2,
+    "W": 4.6,
+    "E": 0.5
+   },
+   "buildings": [],
+   "stairs": [
+    {
+     "side": "W",
+     "at": 0.8,
+     "width": 3.6,
+     "landing": 6
+    }
+   ],
+   "path": [
+    [
+     0.1292,
+     0.8
+    ],
+    [
+     0.5075,
+     0.8
+    ]
+   ],
+   "pathW": 3.6,
+   "provenance": "user v0.7e: stairs at the level of the S2 door, close to the forecourt"
+  }
+ ],
+ "noHedge": [
+  [
+   -0.62,
+   0.775,
+   0.27,
+   1.34
+  ],
+  [
+   -0.94,
+   0.4657,
+   -0.63,
+   0.6
+  ]
+ ],
+ "version": "0.7f"
+}
