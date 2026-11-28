@@ -14,6 +14,9 @@ export class Player {
     this.camYaw = 0;          // 0 = looking north (-z)
     this.camPitch = 0.28;
     this.camDist = 6.2;
+    this.ceilingFn = null;
+    this.camOverride = null;
+    this.ceilingY = Infinity;   // interiors: the follow camera must stay under the ceiling
     this.facing = 0;
     this.keys = new Set();
     this.speed = 0;
@@ -86,6 +89,12 @@ export class Player {
   }
 
   update(dt, camera) {
+    if (this.camOverride) {   // first-person activity (board, PC): the camera is driven from outside, the avatar stays put
+      const o = this.camOverride;
+      if (Math.abs(camera.fov - o.fov) > 0.01) { camera.fov = o.fov; camera.updateProjectionMatrix(); }
+      camera.position.copy(o.pos); camera.lookAt(o.target);
+      return;
+    }
     const k = this.keys;
     const fwd = (k.has('z') || k.has('arrowup') ? 1 : 0) - (k.has('s') || k.has('arrowdown') ? 1 : 0);
     const str = (k.has('d') ? 1 : 0) - (k.has('q') ? 1 : 0);
@@ -144,7 +153,7 @@ export class Player {
     this.avatar.position.copy(this.pos);
     this.avatar.rotation.y = this.facing;
     // wider field of view when running
-    const wantFov = 55 + 17 * rb;
+    const wantFov = 55 + 6 * rb;
     if (Math.abs(camera.fov - wantFov) > 0.02) { camera.fov += (wantFov - camera.fov) * Math.min(1, dt * 5); camera.updateProjectionMatrix(); }
 
     // follow camera with a 2D obstacle check so it does not end up inside walls
@@ -158,6 +167,8 @@ export class Player {
     }
     const target = new THREE.Vector3(head.x + (want.x - head.x) * t, head.y + (want.y - head.y) * t, head.z + (want.z - head.z) * t);
     target.y = Math.max(target.y, this.c.groundHeight(target.x, target.z) + 0.5);
+    const cy = this.ceilingFn ? this.ceilingFn(target.x, target.z) : this.ceilingY;
+    if (cy < 1e6) target.y = Math.min(target.y, cy - 0.25);
     if (!this._camInit) { this._cam.copy(target); this._camInit = true; }
     this._cam.lerp(target, Math.min(1, dt * 10));
     camera.position.copy(this._cam);
@@ -165,6 +176,7 @@ export class Player {
   }
 
   _tryMove(nx, nz) {
+    this.c.playerY = this.pos.y;
     const R = U.avatarR, b = this.bounds;
     nx = Math.max(b.x0, Math.min(b.x1, nx)); nz = Math.max(b.z0, Math.min(b.z1, nz));
     const [rx, rz] = this.c.resolve(nx, nz, R);

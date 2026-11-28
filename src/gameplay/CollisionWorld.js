@@ -14,16 +14,17 @@ export class CollisionWorld {
     this.surfaces = [];
     this.grid = null;
     this.bounds = null;
+    this.playerY = 0;   // feet height of the player: solids with a finite `top` (benches) are ignored once the feet are near that height
   }
 
-  addPolygon(outer, holes = [], tag = '') {
+  addPolygon(outer, holes = [], tag = '', top = Infinity) {
     const pts = outer.slice();
     if (pts.length > 1 && pts[0][0] === pts[pts.length - 1][0] && pts[0][1] === pts[pts.length - 1][1]) pts.pop();
     const hs = holes.map((h) => { const q = h.slice(); if (q.length > 1 && q[0][0] === q[q.length - 1][0] && q[0][1] === q[q.length - 1][1]) q.pop(); return q; });
     const bb = bboxOf(pts);
     const edges = [];
     for (const ring of [pts, ...hs]) for (let i = 0; i < ring.length; i++) { const a = ring[i], b = ring[(i + 1) % ring.length]; edges.push([a[0], a[1], b[0], b[1]]); }
-    this.solids.push({ outer: pts, holes: hs, bb, edges, tag });
+    this.solids.push({ outer: pts, holes: hs, bb, edges, tag, top });
   }
 
   /** polygon-clipping MultiPolygon: [[ring, hole...], ...] */
@@ -92,6 +93,7 @@ export class CollisionWorld {
     for (const i of n.c) { const c = this.circles[i]; if (Math.hypot(x - c.x, z - c.z) < r + c.r) return true; }
     for (const i of n.s) {
       const s = this.solids[i];
+      if (this.playerY >= s.top - 0.45) continue;
       if (x < s.bb.minX - r || x > s.bb.maxX + r || z < s.bb.minZ - r || z > s.bb.maxZ + r) continue;
       if (pointInPolygon(x, z, s.outer) && !s.holes.some((h) => pointInPolygon(x, z, h))) return true;
       for (const e of s.edges) if (segDist(x, z, e) < r) return true;
@@ -111,6 +113,7 @@ export class CollisionWorld {
       }
       for (const i of n.s) {
         const s = this.solids[i];
+        if (this.playerY >= s.top - 0.45) continue;
         if (x < s.bb.minX - r || x > s.bb.maxX + r || z < s.bb.minZ - r || z > s.bb.maxZ + r) continue;
         const inside = pointInPolygon(x, z, s.outer) && !s.holes.some((h) => pointInPolygon(x, z, h));
         let best = Infinity, qx = 0, qz = 0;

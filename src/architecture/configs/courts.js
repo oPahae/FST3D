@@ -26,7 +26,7 @@ export const NE_COURT = cfg('NE_COURT', {
     { match: {}, ground: 'archwin', upper: 'archwin', pilasters: 'brick', plinthMat: 'brick' },
   ],
   // v0.7d: two doors, at the two ends of the face towards Block B
-  doors: [-0.5075, -0.350].map((z) => ({ nu: [0.5848, z], steps: 2, width: 2.4, height: 2.7, canopy: false, fill: 'frameGreen' })),
+  doors: [-0.5075, -0.350].map((z, i) => ({ nu: [0.5848, z], steps: 2, width: 2.4, height: 2.7, canopy: false, fill: 'frameGreen', enter: 'library', slot: i, markerY: 2.45, markerScale: 0.7 })),   // v0.8: both porch doors lead to the library
   prepare: (ctx, edges, shared) => { for (const z of [-0.5075, -0.350]) libraryPortico(ctx, edges, shared, { nu: [0.5848, z] }); },
   provenance: { footprint: 'verified (satellite)', floors: 'verified (field photos): two storeys', facade: 'verified (field photos): cream walls, brick pillars/piers, arcade with kiosk shutters, concrete portal canopy over a dark glazed door', roof: 'verified: green-tile pyramid roof on a raised drum (satellite, matches the tiles in the field photos)' },
   notes: 'Courtyard building at the north-east with a green-tile pyramid roof. Its exterior is also the model for the Buvette.',
@@ -59,7 +59,7 @@ export const BUVETTE = cfg('BUVETTE', {
     { match: {}, ground: 'windows', plinthMat: 'brick', plinthH: 0.95 },
   ],
   prepare: (ctx, edges, shared) => { buvetteFront(ctx, edges, shared); },
-  doors: [],   // v0.6: the Buvette cannot be entered (no door, no interior)
+  doors: [],   // v0.9: the enter marker is added by buvetteFront (no door geometry)
   provenance: {
     footprint: 'inferred: footprint of the satellite-only building across the west road at the former Bibliothèque latitude',
     facade: 'verified (user photo of the real Buvette, 2026-11-20): beige render, large brick-framed glazed windows, brick-tile base, concrete entrance steps on the left, grey shed roof',

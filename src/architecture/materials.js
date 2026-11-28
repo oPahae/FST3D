@@ -52,7 +52,7 @@ export function makeMaterials() {
     soil: std(0x6b4a2f, { roughness: 1 }),
     floorRedConc: std(0xb98574, { roughness: 0.97 }),
     floorGrey: std(0x8a8d92, { roughness: 0.8 }),
-    graphite: std(0x4d525a, { roughness: 0.55, metalness: 0.15 }),
+    graphite: std(0xd9c9a3, { roughness: 0.75, metalness: 0 }),
     cypress: std(0x1f4a2c, { roughness: 1, flatShading: true }),
     fanPalm: std(0x3f8a45, { roughness: 0.8, side: THREE.DoubleSide }),
     trim: std(PALETTE.trim),

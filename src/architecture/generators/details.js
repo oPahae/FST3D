@@ -49,6 +49,10 @@ export function niche(ctx, edges, shared, spec) {
     m.position.set(px, 2.55, pz); m.rotation.y = Math.atan2(e.d[0], e.d[1]);                  // faces +d (into the niche)
     shared.extras.push(m);
   }
+  if (spec.enter) {   // v0.8: the plaque door (left side wall of the niche) leads to an interior world
+    const [dx, dz] = pt(e, u - w / 2 + 0.02, -dep / 2);
+    shared.enterDoors.push({ building: ctx.cfg.id, world: spec.enter, slot: spec.slot ?? 0, x: dx, z: dz, nx: e.d[0], nz: e.d[1], standOff: 0.95, doorH: 2.3, markerScale: 0.45, id: `${ctx.cfg.id}#${spec.enter}` });
+  }
   return { cuts: [rectOf(e, u - w / 2, u + w / 2, 0.9, -(dep - 0.05))] };
 }
 
@@ -211,4 +215,7 @@ export function buvetteFront(ctx, edges, shared) {
   buildStairs({ b, collision }, { origin: o, dir: [-e.n[0], -e.n[1]], width: L - 0.8, steps, rise, tread, mat: 'stone' });
   edgeBox(b, 'stone', e, L - 0.4, L, 0, PH + 0.9, plat + steps * tread, 0);                  // granite cheek wall on one side
   collision.addPolygon(rectOf(e, L - 0.4, L, plat + steps * tread, 0), [], 'buv-cheek');
+  // v0.9: enter marker only (the façade is unchanged) on the boulevard (east) face
+  const eE = sideEdge(edges, 'E');
+  if (eE && shared && shared.enterDoors) { const u = eE.len * 0.3 + (eE.d[1] > 0 ? 1.9 : -1.9), p = pt(eE, u, 0); shared.enterDoors.push({ building: 'BUVETTE', world: 'buvette', slot: 0, x: p[0], z: p[1], nx: eE.n[0], nz: eE.n[1], standOff: 1.8, doorH: 2.6, markerScale: 0.8, markerY: 2.8, id: 'BUVETTE#0' }); }
 }
