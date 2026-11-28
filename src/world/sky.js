@@ -49,5 +49,5 @@ export function buildSky(scene, sunDir) {
   });
   const clouds = new THREE.Mesh(new THREE.SphereGeometry(5500, 32, 16), cloudMat); clouds.frustumCulled = false; clouds.renderOrder = -1;
   scene.add(clouds);
-  return { update(camera, t) { sky.position.copy(camera.position); clouds.position.copy(camera.position); cloudMat.uniforms.uTime.value = t; } };
+  return { update(camera, t) { sky.position.copy(camera.position); clouds.position.copy(camera.position); cloudMat.uniforms.uTime.value = t; }, setVisible(v) { sky.visible = clouds.visible = v; } };
 }

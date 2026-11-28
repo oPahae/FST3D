@@ -21,7 +21,7 @@ function nearestEdge(edges, P) {
   return best;
 }
 
-function placeDoor(edges, spec, shared) {
+function placeDoor(edges, spec, shared, bldId) {
   let target = null;
   if (spec.nu) {
     const n = nearestEdge(edges, shared.nuToM(spec.nu));
@@ -34,6 +34,10 @@ function placeDoor(edges, spec, shared) {
   if (!target) return false;
   const margin = 2.2;
   const u = Math.max(margin, Math.min(target.e.len - margin, target.u));
+  if (spec.enter) {   // v0.8: enterable door -> interior world (marker + "K" prompt are built from this record)
+    const e = target.e, steps = spec.steps ?? 2;
+    shared.enterDoors.push({ building: bldId, world: spec.enter, slot: spec.slot ?? 0, x: e.a[0] + e.d[0] * u, z: e.a[1] + e.d[1] * u, nx: e.n[0], nz: e.n[1], standOff: steps * U.stepTread + 0.9, doorH: spec.height ?? U.doorH, markerScale: spec.markerScale ?? 1, markerY: spec.markerY, id: `${bldId}#${spec.slot ?? 0}` });
+  }
   target.e.openings.push({ kind: 'door', u, width: spec.width, height: spec.height, arch: spec.arch, canopy: spec.canopy, steps: spec.steps, canopyOut: spec.canopyOut, portal: spec.portal, fill: spec.fill, bars: spec.bars, canopyType: spec.canopyType });
   return true;
 }
@@ -52,7 +56,7 @@ export function generateBlock(shared, bld, cfg) {
     info.edges += edges.length;
     for (const e of edges) e.style = pickRule(e, cfg.facades || []);
 
-    for (const d of cfg.doors || []) if (placeDoor(edges, d, shared)) info.doors++;
+    for (const d of cfg.doors || []) if (placeDoor(edges, d, shared, bld.id)) info.doors++;
 
     const cuts = [];
     if (cfg.prepare) { const r = cfg.prepare(ctx, edges, shared, poly) || {}; for (const c of r.cuts || []) cuts.push(c); }

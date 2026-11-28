@@ -32,12 +32,12 @@ const amphiFacades = [{ match: {}, ground: 'archarcade', upper: 'archwin', arcad
 export const AMPHI_6 = cfg('AMPHI_6', {
   wallMat: 'wallCream', floors: 1, groundH: 7.4, turrets: false, roofRise: 2.0,
   facades: amphiFacades,
-  doors: [{ nu: [-0.6515, 0.2906], steps: 3, width: 2.8, arch: true, portal: true, canopy: false }, { side: 'S', at: 0.3, steps: 2 }],   // v0.7e: east door at the north end of the face
+  doors: [{ nu: [-0.6515, 0.2906], steps: 3, width: 2.8, arch: true, portal: true, canopy: false, enter: 'amphi', slot: 0 }, { side: 'S', at: 0.3, steps: 2, enter: 'amphi', slot: 1 }],   // v0.7e: east door at the north end of the face
   provenance: amphiProv, notes: 'Amphi 6 (provisional identity).',
 });
 export const AMPHI_2 = cfg('AMPHI_2', {
   wallMat: 'wallCream', floors: 1, groundH: 7.4, turrets: false, roofRise: 2.0,
   facades: amphiFacades,
-  doors: [{ nu: [0.6424, 0.215], steps: 3, width: 2.8, arch: true, portal: true, canopy: false }, { side: 'S', at: 0.7, steps: 2 }],   // v0.7: the west door is at the north corner, not in the middle
+  doors: [{ nu: [0.6424, 0.215], steps: 3, width: 2.8, arch: true, portal: true, canopy: false, enter: 'amphi', slot: 0 }, { side: 'S', at: 0.7, steps: 2, enter: 'amphi', slot: 1 }],   // v0.7: the west door is at the north corner, not in the middle
   provenance: amphiProv, notes: 'Amphi 2 (provisional identity).',
 });

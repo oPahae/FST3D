@@ -6,9 +6,9 @@ const satCfg = (id, over) => cfg(id, { wallMat: 'wall', roofStyle: 'flat', frame
 const sat = (extra = {}) => ({ footprint: 'verified (satellite only, not in the model)', floors: 'assumed', facade: 'assumed', roof: 'verified: flat roof seen in the satellite', ...extra });
 const std = [{ match: {}, ground: 'windows', upper: 'windows', coping: 'trim' }];
 
-export const S1 = satCfg('S1', { floors: 2, roofMat: 'concrete', facades: std, doors: [{ nu: [-0.0728, 0.86], steps: 2 }], provenance: sat({ roof: 'verified: grey flat roof with rooftop vents' }), notes: 'South building S1.' });
-export const S2 = satCfg('S2', { floors: 2, roofMat: 'concrete', facades: std, doors: [{ nu: [0.106, 0.86], steps: 2 }], provenance: sat({ roof: 'verified: grey flat roof with rooftop vents' }), notes: 'South building S2.' });
-export const S3 = satCfg('S3', { floors: 3, roofMat: 'concrete', facades: std, doors: [{ nu: [0.0908, 1.06], steps: 1, width: 2.6 }], provenance: sat({ roof: 'verified: grey flat roof with rooftop vents' }), notes: 'South building S3, on the entrance axis.' });
+export const S1 = satCfg('S1', { floors: 2, roofMat: 'concrete', facades: std, doors: [{ nu: [-0.0728, 0.86], steps: 2, enter: 'amphi', slot: 0 }], provenance: sat({ roof: 'verified: grey flat roof with rooftop vents' }), notes: 'South building S1.' });
+export const S2 = satCfg('S2', { floors: 2, roofMat: 'concrete', facades: std, doors: [{ nu: [0.106, 0.86], steps: 2, enter: 'amphi', slot: 0 }], provenance: sat({ roof: 'verified: grey flat roof with rooftop vents' }), notes: 'South building S2.' });
+export const S3 = satCfg('S3', { floors: 3, roofMat: 'concrete', facades: std, doors: [{ nu: [0.0908, 1.06], steps: 1, width: 2.6, enter: 'amphi', slot: 0 }], provenance: sat({ roof: 'verified: grey flat roof with rooftop vents' }), notes: 'South building S3, on the entrance axis.' });
 export const IT_LEARN = satCfg('IT_LEARN', {
   floors: 2, wallMat: 'wallPeach', roofStyle: 'hip', roofTile: 'tileTeal', frameMat: 'frameGreen', turrets: false, arcadeFloor: 'floorChecker',
   facades: [

@@ -324,8 +324,10 @@ export function buildEnvironment(layout, collision, archShared) {
 
   // ---- street furniture ----------------------------------------------------------------------------------------------------
   collision.finalize();
+  const lampPts = [];
   const lampAt = (x, z) => {
     if (collision.blocked(x, z, 0.8)) return;
+    lampPts.push([x, z]);
     b.box('poleGreen', x, 2.3, z, 0.14, 4.6, 0.14); b.box('poleGreen', x + 0.4, 4.55, z, 0.9, 0.08, 0.08); b.box('lampHead', x + 0.85, 4.45, z, 0.5, 0.18, 0.32);
     collision.addCircle(x, z, 0.22, 'lamp'); stats.lamps++;
   };
@@ -357,6 +359,30 @@ export function buildEnvironment(layout, collision, archShared) {
   const walk = pathById('P_S_EW'); if (walk) { alongLine(walk.centerline.map(toM), 26, 2.4, (x, z) => lampAt(x, z)); alongLine(walk.centerline.map(toM), 40, 2.4, (x, z) => benchAt(x, z, 0)); }
   const fore = pathById('P_FORECOURT'); if (fore) alongLine(fore.centerline.map(toM), 14, 7.5, (x, z) => lampAt(x, z));
   const pw = pathById('P_E_PLAZA'); if (pw) alongLine(pw.centerline.map(toM), 20, 3.2, (x, z) => lampAt(x, z));
+
+  // ---- door of the mini pitch, right beside the nearest lighting pole (leads to the "foot" interior world) -------------------------------------------
+  const pf = (layout.features || []).find((q) => q.type === 'pitch');
+  if (pf && archShared && archShared.enterDoors && lampPts.length) {
+    const pp = pf.polygon.map(toM);
+    const X0 = Math.min(...pp.map((q) => q[0])), X1 = Math.max(...pp.map((q) => q[0])), Z0 = Math.min(...pp.map((q) => q[1])), Z1 = Math.max(...pp.map((q) => q[1]));
+    let best = null;
+    for (const [lx, lz] of lampPts) {
+      const dx = Math.max(X0 - lx, 0, lx - X1), dz = Math.max(Z0 - lz, 0, lz - Z1), d = Math.hypot(dx, dz);
+      if (!best || d < best.d) best = { d, lx, lz };
+    }
+    if (best && best.d < 25) {
+      const { lx, lz } = best, sides = [
+        { n: [0, -1], dist: Math.abs(lz - Z0), along: [1, 0], at: (t) => [t, Z0] }, { n: [0, 1], dist: Math.abs(lz - Z1), along: [1, 0], at: (t) => [t, Z1] },
+        { n: [-1, 0], dist: Math.abs(lx - X0), along: [0, 1], at: (t) => [X0, t] }, { n: [1, 0], dist: Math.abs(lx - X1), along: [0, 1], at: (t) => [X1, t] }];
+      sides.sort((a, c) => a.dist - c.dist);
+      const sd = sides[0], lo = sd.along[0] ? X0 : Z0, hi = sd.along[0] ? X1 : Z1, lc = sd.along[0] ? lx : lz;
+      let t = lc + (lc > (lo + hi) / 2 ? -1.7 : 1.7); t = Math.min(hi - 1.5, Math.max(lo + 1.5, t));
+      const [gx, gz] = sd.at(t), yaw = Math.atan2(sd.n[0], sd.n[1]);
+      b.box('frameGreen', gx + sd.n[0] * 0.1, 1.1, gz + sd.n[1] * 0.1, sd.along[0] ? 1.3 : 0.12, 2.2, sd.along[0] ? 0.12 : 1.3);
+      b.box('frameDark', gx + sd.n[0] * 0.18, 1.05, gz + sd.n[1] * 0.18, sd.along[0] ? 1.0 : 0.05, 0.1, sd.along[0] ? 0.05 : 1.0);
+      archShared.enterDoors.push({ building: 'PITCH', world: 'foot', slot: 0, x: gx, z: gz, nx: sd.n[0], nz: sd.n[1], standOff: 1.6, doorH: 2.2, markerScale: 0.6, markerY: 2.6, id: 'PITCH#0', side: sd.n[1] > 0 ? 'S' : sd.n[1] < 0 ? 'N' : sd.n[0] > 0 ? 'E' : 'W', frac: (t - lo) / (hi - lo) });
+    }
+  }
 
   group.add(b.finish());
   collision.finalize();

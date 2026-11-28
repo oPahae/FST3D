@@ -49,7 +49,7 @@ export function buildArchitecture(layout, collision) {
 
   const builder = new Builder(mats, { name: 'architecture' });
   const shared = {
-    mats, collision, layout, builder, tiles: [], extras: [], texMap: {},
+    mats, collision, layout, builder, tiles: [], extras: [], texMap: {}, enterDoors: [],
     /** Textured geometry (needs UVs, so it bypasses the Builder): one merged mesh per material key. */
     texList(key) { return (this.texMap[key] ||= []); },
     nuToM: toM,

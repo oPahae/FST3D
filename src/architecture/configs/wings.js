@@ -46,6 +46,6 @@ export const WING_W_MID = cfg('WING_W_MID', {
 });
 export const WING_E_MID = cfg('WING_E_MID', {
   floors: 3, wallMat: 'wallSalmon', provenance: connProv, facades: wingFacades(), doors: [],
-  prepare: (ctx, edges, shared) => ({ cuts: (niche(ctx, edges, shared, { nu: [0.3879, -0.1509], w: 5, d: 3, face: 'garden', label: 'D04' }) || {}).cuts || [] }),
+  prepare: (ctx, edges, shared) => ({ cuts: (niche(ctx, edges, shared, { nu: [0.3879, -0.1509], w: 5, d: 3, face: 'garden', label: 'D04', enter: 'd04' }) || {}).cuts || [] }),
   notes: 'Stepped connector between B and A. Contains a walkable east-west passage between the garden and the east plaza.',
 });
